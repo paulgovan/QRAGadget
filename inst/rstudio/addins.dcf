@@ -1,0 +1,4 @@
+Name: QRA Gadget
+Description: A Shiny Gadget For Interactive QRA Visualizations
+Binding: QRAGadget
+Interactive: true
