@@ -140,9 +140,8 @@ QRAGadget <- function() {
 
     # Get file upload and clean data
     data <- reactive({
+      req(input$file)
       inFile <- input$file
-      if (is.null(inFile))
-        return(NULL)
       data <- read.csv(inFile$datapath)
       data[data == 0] <- NA
       as.matrix(data)
@@ -155,6 +154,7 @@ QRAGadget <- function() {
 
     # Create a raster image
     r <- reactive({
+      req(input$xmn, input$xmx, input$ymn, input$ymx, input$projection)
       r <- raster(nrows = nrow(data()), ncols = ncol(data()),
                   xmn = input$xmn, xmx = input$xmx, ymn = input$ymn, ymx = input$ymx)
       crs(r) <- sp::CRS(input$projection)
@@ -164,6 +164,7 @@ QRAGadget <- function() {
 
     # Create a map object
     map <- reactive({
+      req(input$nbins, input$bins, input$pal, input$tile)
       if (is.null(data()))
         return(NULL)
 
