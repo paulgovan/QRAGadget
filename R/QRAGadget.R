@@ -42,9 +42,9 @@ sample <- matrix(runif(36*36), ncol = 36, nrow = 36) %>%
 # Get all of the objects in the global environment
 objects <- ls(pos = 1)
 
-if(length(objects) == 0) stop("No objects found. Please create a data.frame to continue", call. = FALSE)
-# determine which are data frames
-dataChoices <- objects[sapply(objects, function(x) is.data.frame(get(x)))]
+# if(length(objects) == 0) stop("No objects found. Please create a data.frame to continue", call. = FALSE)
+# # determine which are data frames
+# dataChoices <- objects[sapply(objects, function(x) is.data.frame(get(x)))]
 
 # Set initial bins
 initBins = c(1e-16, 1e-15, 1e-14, 1e-13, 1e-12, 1e-11, 1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 0.0001) %>%
@@ -60,6 +60,7 @@ QRAGadget <- function() {
       miniTabPanel("Search", icon = icon("search"),
                    miniContentPanel(
                      radioButtons("radioData", "Data Type:", choices = c("File Upload"=1, "R Object"=2)),
+                     hr(),
                      conditionalPanel("input.radioData == 1",
                                       fileInput('file', strong('File Input:'),
                                                 accept = c(
