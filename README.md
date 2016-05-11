@@ -19,3 +19,7 @@ To launch the gadget, simply type:
 ```
 QRAGadget()
 ```
+# Note
+While this gadget was initially intended for those interested in creating interactive QRA visualizations, it may also be useful to anyone interested in visualizing [raster](https://cran.r-project.org/web/packages/raster/vignettes/Raster.pdf) data in [leaflet](http://leafletjs.com/) map.
+
+This project is in its very early stages. Please let us know if there are things you would like to see (or things you dont't like) by sending us a pull request. 
