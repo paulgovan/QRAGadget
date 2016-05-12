@@ -57,12 +57,12 @@ QRAGadget <- function() {
   ui <- miniPage(
     gadgetTitleBar("QRA Gadget"),
     miniTabstripPanel(
-      miniTabPanel("Search", icon = icon("search"),
+      miniTabPanel("Input/Output", icon = icon("search"),
                    miniContentPanel(
-                     radioButtons("radioData", "Data Type:", choices = c("File Upload"=1, "R Object"=2)),
+                     radioButtons("radioData", "Input Type:", choices = c("File Upload"=1, "Data Frame"=2)),
                      hr(),
                      conditionalPanel("input.radioData == 1",
-                                      fileInput('file', strong('File Input:'),
+                                      fileInput('file', strong('File Upload:'),
                                                 accept = c(
                                                   'text/csv',
                                                   'text/comma-separated-values',
@@ -74,9 +74,12 @@ QRAGadget <- function() {
                                       )
                      ),
                      conditionalPanel("input.radioData == 2",
-                                      selectInput("data", "Select Data:",
+                                      selectInput("data", "Data Frame:",
                                                   choices = dataChoices, width = "100%")
-                     )
+                     ),
+                     hr(),
+                     textInput("fileName", "File Name:", value = "myMap", width = "100%"),
+                     helpText("A standalone html file will be saved in your working directory with the above file name")
                    )
       ),
       miniTabPanel("Raster", icon = icon("picture-o"),
@@ -228,7 +231,8 @@ QRAGadget <- function() {
     })
 
     observeEvent(input$done, {
-      stopApp(saveWidget(map(), "map.html"))
+      fileName <- paste0(input$fileName, ".html")
+      stopApp(saveWidget(map(), fileName))
     })
   }
 
