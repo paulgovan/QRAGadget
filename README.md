@@ -19,7 +19,7 @@ You can install QRAGadget in [R](https://www.r-project.org) with:
 devtools::install_github('paulgovan/QRAGadget')
 ```
 
-After installatin is complete, if you are using [RStudio](https://www.rstudio.com/products/rstudio/) (v0.99.878 or later), QRAGadget will appear in the Addins dropdown menu. Otherwise, to launch the gadget, simply type:
+After installation is complete, if you are using [RStudio](https://www.rstudio.com/products/rstudio/) (v0.99.878 or later), QRAGadget will appear in the Addins dropdown menu. Otherwise, to launch the gadget, simply type:
 
 ```
 QRAGadget()
@@ -29,11 +29,20 @@ QRAGadget()
 
 ## Data
 
-QRAGadget currently accepts two primary types of raster data: (1) a file upload (in csv format) or (2) an R `data.frame` object. As a simple example, we will create some dummy data in order to explore the gadget:
+QRAGadget currently accepts two primary types of raster data: (1) a file upload (in csv format) or (2) an R `data.frame` object. In order to explore the gadget, let's create some dummy data:
 
 ```
 sample <- matrix(runif(36*36), ncol = 36, nrow = 36) %>%
   data.frame()
 ```
 
+Then launch the app:
+
+```
+QRAGadget()
+```
+
+At this point, you should see the *Search* page. To bring the data into the gadget, Click on *R Object* under **Data Type**, and then select *sample* from the dropdown menu.
+
+## Raster
  
