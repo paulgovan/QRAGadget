@@ -47,4 +47,7 @@ At this point, you should see the *Search* page. To find your dummy data, click 
 ![Search Page](https://github.com/paulgovan/QRAGadget/blob/master/images/Search.PNG?raw=true)
 
 ## Raster
- 
+
+To format your raster image, click the *Raster* icon. Here you will see options for specifying the extents of your raster image (XMIN, XMAX, YMIN, and YMAX) as well as the [projection](https://rstudio.github.io/leaflet/raster.html) of your raster layer. It is very important that your raster layer is tagged with the correct project coordinate system.   
+
+
