@@ -44,5 +44,7 @@ QRAGadget()
 
 At this point, you should see the *Search* page. To find your dummy data, click *R Object* under **Data Type**, and then select *sample* from the dropdown menu.
 
+![Search Page](https://github.com/paulgovan/QRAGadget/blob/master/images/Search.PNG?raw=true)
+
 ## Raster
  
