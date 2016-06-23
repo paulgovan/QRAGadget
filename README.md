@@ -56,3 +56,8 @@ To format your raster image, click the *Raster* icon. Here you will see options 
 
 To view your interactive QRA map, click the *Map* icon. If at any time you want to reset the extents of your map, simply click the *Reset* button.
 
+![Map Page](https://github.com/paulgovan/QRAGadget/blob/master/images/map2.PNG?raw=true)
+
+## Preferences
+
+The *Preferences* tab has a number of options for customizing your map. 
