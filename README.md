@@ -50,4 +50,4 @@ At this point, you should see the *Search* page. To find your dummy data, click 
 
 To format your raster image, click the *Raster* icon. Here you will see options for specifying the extents of your raster image (XMIN, XMAX, YMIN, and YMAX) as well as the [projection](https://rstudio.github.io/leaflet/raster.html) of your raster layer. It is very important that your raster layer is tagged with the correct project coordinate system. Finally, you can specify the number of bins for your color palette, and/or the cut value for each bin.
 
-[Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/images/raster.PNG?raw=true)
+![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/images/raster.PNG?raw=true)
