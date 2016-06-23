@@ -50,6 +50,8 @@ At this point, you should see the *Search* page. To find your dummy data, click 
 
 To format your raster image, click the *Raster* icon. Here you will see options for specifying the extents of your raster image (XMIN, XMAX, YMIN, and YMAX) as well as the [projection](https://rstudio.github.io/leaflet/raster.html) of your raster layer. It is very important that your raster layer is tagged with the correct project coordinate reference system. Finally, you can specify the number of bins for your color palette.
 
+For this example, let's use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection:
+
 ![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/images/raster.PNG?raw=true)
 
 ## Map
@@ -60,4 +62,12 @@ To view your interactive QRA map, click the *Map* icon. If at any time you want 
 
 ## Preferences
 
-The *Preferences* tab has a number of options for customizing your map. 
+The *Preferences* tab has a number of options for customizing your map:
+
+* The title of the map
+* The color palette (see [colorbrewer2.org](colorbrewer2.org))
+* The basemap (see [http://leaflet-extras.github.io](http://leaflet-extras.github.io/leaflet-providers/preview/index.html))
+* The control position
+* The legend position
+
+![Preferences Page](https://github.com/paulgovan/QRAGadget/blob/master/images/preferences.PNG?raw=true)
