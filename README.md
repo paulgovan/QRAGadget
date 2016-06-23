@@ -12,20 +12,28 @@ QRAGadget is a Shiny Gadget for creating interactive QRA visualizations. QRAGadg
 
 This project is in its *very* early stages. Please let us know if there are things you would like to see (or things you don't like!) by opening up an issue.
 
-# Example
-
-## Getting Started
+# Getting Started
 You can install QRAGadget in [R](https://www.r-project.org) with:
 
-```S
+```
 devtools::install_github('paulgovan/QRAGadget')
 ```
 
-If you are using RStudio (v0.99.878 or later), QRAGadget will appear in the Addins dropdown menu. Otherwise, to launch the gadget, simply type:
+After installatin is complete, if you are using [RStudio](https://www.rstudio.com/products/rstudio/) (v0.99.878 or later), QRAGadget will appear in the Addins dropdown menu. Otherwise, to launch the gadget, simply type:
 
 ```
 QRAGadget()
 ```
 
+# Example
+
+## Data
+
+QRAGadget currently accepts two primary types of raster data: (1) a file upload (in csv format) or (2) an R `data.frame` object. As a simple example, we will create some dummy data in order to explore the gadget:
+
+```
+sample <- matrix(runif(36*36), ncol = 36, nrow = 36) %>%
+  data.frame()
+```
 
  
