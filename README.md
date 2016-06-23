@@ -19,7 +19,7 @@ You can install QRAGadget in [R](https://www.r-project.org) with:
 devtools::install_github('paulgovan/QRAGadget')
 ```
 
-After installation is complete, if you are using [RStudio](https://www.rstudio.com/products/rstudio/) (v0.99.878 or later), QRAGadget will appear in the Addins dropdown menu. Otherwise, to launch the gadget, simply type:
+After installation is complete, and if you are using [RStudio](https://www.rstudio.com/products/rstudio/) (v0.99.878 or later), QRAGadget will appear in the Addins dropdown menu. Otherwise, to launch the gadget, simply type:
 
 ```
 QRAGadget()
@@ -42,7 +42,7 @@ Then launch the app:
 QRAGadget()
 ```
 
-At this point, you should see the *Search* page. To bring the data into the gadget, Click on *R Object* under **Data Type**, and then select *sample* from the dropdown menu.
+At this point, you should see the *Search* page. To find your dummy data, click *R Object* under **Data Type**, and then select *sample* from the dropdown menu.
 
 ## Raster
  
