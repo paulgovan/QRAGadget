@@ -1,8 +1,6 @@
 # QRAGadget
 A Shiny Gadget for Interactive QRA Visualizations
 
-![QRAGadget](https://github.com/paulgovan/QRAGadget/blob/master/images/map2.PNG?raw=true)
-
 # Features
 * Easily create Quantitative Risk Analysis (QRA) visualizations
 * Choose from numerous color palettes, basemaps, and different configurations
@@ -25,9 +23,9 @@ QRAGadget()
 
 # Example
 
-## Data
+## Input/Output
 
-QRAGadget currently accepts two primary types of raster data: (1) a file upload (in csv format) or (2) an R `data.frame` object. In order to explore the gadget, let's create some dummy data:
+QRAGadget currently accepts two primary types of raster data: (1) a file upload (in csv format) or (2) an R `data.frame` object. In order to explore the gadget, create some dummy data:
 
 ```
 sample <- matrix(runif(36*36), ncol = 36, nrow = 36) %>%
@@ -40,9 +38,9 @@ Then launch the app:
 QRAGadget()
 ```
 
-At this point, you should see the *Search* page. To find your dummy data, click *R Object* under **Data Type**, and then select *sample* from the dropdown menu.
+Launching the app brings up the *Input/Output* page. To find the dummy data, click *R Object* under **Data Type**, and then select *sample* from the dropdown menu.
 
-Choose a name for your html file. After you are done customizing your map, click *Done* to create a standalone html file in your working directory. If at any time you need to start over, click *Cancel*.
+Choose a name for the output html filet. After customizing the map, click *Done* to create a standalone html file in the working directory. Click *Cancel* any time to start over. 
 
 ![Search Page](https://github.com/paulgovan/QRAGadget/blob/master/images/Search%20Page.png?raw=true)
 
