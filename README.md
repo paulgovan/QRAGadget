@@ -39,7 +39,7 @@ Launching the app brings up the *Input/Output* page. To find the dummy data, cli
 
 Choose a name for the output html file. After customizing the map, click *Done* to create a standalone html file in the working directory. Click *Cancel* any time to start over. 
 
-![Search Page](https://github.com/paulgovan/QRAGadget/blob/master/images/Search%20Page.png?raw=true)
+![Input/Output Page](https://github.com/paulgovan/QRAGadget/blob/master/InputOutput.PNG?raw=true)
 
 ## Raster
 
@@ -47,13 +47,13 @@ To format the raster image, click the *Raster* icon. Here are a number of option
 
 For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection:
 
-![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/images/raster.PNG?raw=true)
+![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/Raster.PNG?raw=true)
 
 ## Map
 
 To view the interactive map, click the *Map* icon. Click the *Reset* button at any time in order to reset the extents of the map.
 
-![Map Page](https://github.com/paulgovan/QRAGadget/blob/master/images/map2.PNG?raw=true)
+![Map Page](https://github.com/paulgovan/QRAGadget/blob/master/Map.PNG?raw=true)
 
 ## Preferences
 
@@ -65,7 +65,7 @@ The *Preferences* tab has a number of options for customizing the map:
 * The control position
 * The legend position
 
-![Preferences Page](https://github.com/paulgovan/QRAGadget/blob/master/images/preferences.PNG?raw=true)
+![Preferences Page](https://github.com/paulgovan/QRAGadget/blob/master/Preferences.PNG?raw=true)
 
 # Source Code
 QRAGadget is an [open source](http://opensource.org) project, and the source code is available at [https://github.com/paulgovan/QRAGadget](https://github.com/paulgovan/QRAGadget)
