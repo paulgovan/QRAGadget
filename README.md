@@ -43,7 +43,7 @@ Choose a name for the output html file. After customizing the map, click *Done* 
 
 ## Raster
 
-To format the raster image, click the *Raster* icon. Here are a number of options for specifying the extents of the raster image (XMIN, XMAX, YMIN, and YMAX) as well as the [projection](https://rstudio.github.io/leaflet/raster.html) of the raster layer. It is very important that the raster layer is tagged with the correct project coordinate reference system. Finally, specify the number of bins for the color palette, and/or the cut values for each bin.
+To format the raster image, click the *Raster* icon. Here are a number of options for specifying the extents of the raster image (XMIN, XMAX, YMIN, and YMAX) as well as the [projection](https://rstudio.github.io/leaflet/raster.html) of the raster layer. It is very important that the raster layer be tagged with the correct project coordinate reference system. Finally, specify the number of bins for the color palette, and/or the cut values for each bin.
 
 For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection:
 
