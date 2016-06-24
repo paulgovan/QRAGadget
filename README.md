@@ -42,7 +42,9 @@ QRAGadget()
 
 At this point, you should see the *Search* page. To find your dummy data, click *R Object* under **Data Type**, and then select *sample* from the dropdown menu.
 
-![Search Page](https://github.com/paulgovan/QRAGadget/blob/master/images/Search.PNG?raw=true)
+Choose a name for your html file. After you are done customizing your map, click *Done* to create a standalone html file in your working directory. If at any time you need to start over, click *Cancel*.
+
+![Search Page](https://github.com/paulgovan/QRAGadget/blob/master/images/Search%20Page.png?raw=true)
 
 ## Raster
 
