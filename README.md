@@ -1,6 +1,3 @@
-# QRAGadget
-A Shiny Gadget for Interactive QRA Visualizations
-
 # Features
 * Easily create Quantitative Risk Analysis (QRA) visualizations
 * Choose from numerous color palettes, basemaps, and different configurations
@@ -54,13 +51,13 @@ For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well 
 
 ## Map
 
-To view your interactive map, click the *Map* icon. If at any time you want to reset the extents of your map, simply click the *Reset* button.
+To view the interactive map, click the *Map* icon. Click the *Reset* button at any time in order to reset the extents of the map.
 
 ![Map Page](https://github.com/paulgovan/QRAGadget/blob/master/images/map2.PNG?raw=true)
 
 ## Preferences
 
-The *Preferences* tab has a number of options for customizing your map:
+The *Preferences* tab has a number of options for customizing the map:
 
 * The title of the map
 * The color palette (see [colorbrewer2.org](colorbrewer2.org))
