@@ -51,13 +51,13 @@ Finally, there is an option to disaggregate the raster layer and create a new on
 
 For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection, but check **Smooth** and enter 5 as the number of cells to disaggregate:
 
-![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/Raster.PNG?raw=true)
+![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/raster.PNG?raw=true)
 
 ## Map
 
 To view the interactive map, click the *Map* icon. Click the *Reset* button at any time in order to reset the extents of the map.
 
-![Map Page](https://github.com/paulgovan/QRAGadget/blob/master/Map.PNG?raw=true)
+![Map Page](https://github.com/paulgovan/QRAGadget/blob/master/map.PNG?raw=true)
 
 ## Preferences
 
@@ -69,7 +69,13 @@ The *Preferences* tab has a number of options for customizing the map:
 * The control position
 * The legend position
 
+In order to try some of these options, selct the *PuOr* **Color Palette**, the *Esri.WorldImagery* **Map Tile**, and move the **Control Position** over to the *bottomleft*:
+
 ![Preferences Page](https://github.com/paulgovan/QRAGadget/blob/master/Preferences.PNG?raw=true)
+
+This should result in the following interactive map:
+
+![Map Page 2](https://github.com/paulgovan/QRAGadget/blob/master/Map2.PNG?raw=true)
 
 # Source Code
 QRAGadget is an [open source](http://opensource.org) project, and the source code is available at [https://github.com/paulgovan/QRAGadget](https://github.com/paulgovan/QRAGadget)
