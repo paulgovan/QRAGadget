@@ -47,7 +47,7 @@ To format the raster image, click the *Raster* icon. Here are a number of option
 
 To specify the bins for the color palette, click *Number* to select the total number of bins or *Cuts* to select both the number and the actual cut values for each bin.
 
-Finally, there is an option to disaggregate the raster layer and create a new one with a higher resolution (smaller cells) while also locally interpolating between the new cell values (smooth the cells). To disaggregate the raster layer, check **Smooth**, and then enter the number of cells to disaggregate.
+Finally, there is an option to disaggregate the raster layer and create a new one with a higher resolution (smaller cells) while also locally interpolating between the new cell values (smoothed cells). To disaggregate the raster layer, check **Smooth**, and then enter the number of cells to disaggregate.
 
 For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection, but check **Smooth** and enter 5 as the number of cells to disaggregate:
 
