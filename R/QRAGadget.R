@@ -3,7 +3,6 @@ library(miniUI)
 library(rstudioapi)
 library(shinyIncubator)
 library(leaflet)
-library(R.matlab)
 library(raster)
 library(scales)
 library(htmlwidgets)
@@ -107,7 +106,14 @@ QRAGadget <- function() {
                      ),
                      conditionalPanel("input.radio == 2",
                                       matrixInput('bins', label = NULL, initBins)
-                     )
+                     ),
+                     hr(),
+                     checkboxInput("check", strong("Smooth:")),
+                     conditionalPanel("input.check == 1",
+                                      numericInput("dis", "Number of cells to disaggregate:",
+                                                   1, min = 1, width = "100%")
+                     ),
+                     br()
                    )
       ),
       miniTabPanel("Map", icon = icon("globe"),
@@ -186,7 +192,8 @@ QRAGadget <- function() {
                   xmn = input$xmn, xmx = input$xmx, ymn = input$ymn, ymx = input$ymx)
       crs(r) <- sp::CRS(input$projection)
       r <- setValues(r, vals()) %>%
-        flip(direction = 'y')
+        flip(direction = 'y') %>%
+        disaggregate(input$dis, "bilinear")
     })
 
     # Create a map object
