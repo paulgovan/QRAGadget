@@ -43,9 +43,13 @@ Choose a name for the output html file. After customizing the map, click *Done* 
 
 ## Raster
 
-To format the raster image, click the *Raster* icon. Here are a number of options for specifying the extents of the raster image (XMIN, XMAX, YMIN, and YMAX) as well as the [projection](https://rstudio.github.io/leaflet/raster.html) of the raster layer. It is very important that the raster layer be tagged with the correct project coordinate reference system. Finally, specify the number of bins for the color palette, and/or the cut values for each bin.
+To format the raster image, click the *Raster* icon. Here are a number of options for specifying the extents of the raster image (XMIN, XMAX, YMIN, and YMAX) as well as the [projection](https://rstudio.github.io/leaflet/raster.html) of the raster layer. It is very important that the raster layer be tagged with the correct project coordinate reference system. 
 
-For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection:
+To specify the number of bins for the color palette, click *Number* to select the total number of bins or *Cuts* to select both the number and the actual cut values for each bin.
+
+Finally, there is an option to disaggregate the raster layer and create a new one with a higher resolution (smaller cells) while also locally interpolating between the new cell values (smooth the cells). To disaggregate the raster layer, check **Smooth**, and then enter the number of cells to disaggregate.
+
+For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection, but check **Smooth** and enter 5 as the number of cells to disaggregate:
 
 ![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/Raster.PNG?raw=true)
 
