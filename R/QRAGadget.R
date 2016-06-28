@@ -239,6 +239,6 @@ QRAGadget <- function() {
     })
   }
 
-  runGadget(shinyApp(ui, server), viewer = dialogViewer("QRA Gadget", height = 1000))
+  runGadget(shinyApp(ui, server), viewer = dialogViewer("QRA Gadget", height = 800))
 
 }
