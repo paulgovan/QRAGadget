@@ -37,7 +37,7 @@ QRAGadget()
 
 Launching the app brings up the *Input/Output* page. To find the dummy data, click *R Object* under **Data Type**, and then select *sample* from the dropdown menu.
 
-Choose a name for the output html file. After customizing the map, click *Done* to create a standalone html file in the working directory. Click *Cancel* any time to start over. 
+Choose a name for the output html file. After customizing the map, click *Done* to create a standalone html file in the working directory (Be sure not to save over a previously created map file!). Click *Cancel* any time to start over. 
 
 ![Input/Output Page](https://github.com/paulgovan/QRAGadget/blob/master/InputOutput.PNG?raw=true)
 
@@ -45,7 +45,7 @@ Choose a name for the output html file. After customizing the map, click *Done* 
 
 To format the raster image, click the *Raster* icon. Here are a number of options for specifying the extents of the raster image (XMIN, XMAX, YMIN, and YMAX) as well as the [projection](https://rstudio.github.io/leaflet/raster.html) of the raster layer. It is very important that the raster layer be tagged with the correct project coordinate reference system. 
 
-To specify the number of bins for the color palette, click *Number* to select the total number of bins or *Cuts* to select both the number and the actual cut values for each bin.
+To specify the bins for the color palette, click *Number* to select the total number of bins or *Cuts* to select both the number and the actual cut values for each bin.
 
 Finally, there is an option to disaggregate the raster layer and create a new one with a higher resolution (smaller cells) while also locally interpolating between the new cell values (smooth the cells). To disaggregate the raster layer, check **Smooth**, and then enter the number of cells to disaggregate.
 
@@ -69,9 +69,9 @@ The *Preferences* tab has a number of options for customizing the map:
 * The control position
 * The legend position
 
-In order to try some of these options, selct the *PuOr* **Color Palette**, the *Esri.WorldImagery* **Map Tile**, and move the **Control Position** over to the *bottomleft*:
+To try out some of these options, select the *PuOr* **Color Palette**, the *Esri.WorldImagery* **Map Tile**, and move the **Control Position** over to the *bottomleft*:
 
-![Preferences Page](https://github.com/paulgovan/QRAGadget/blob/master/Preferences.PNG?raw=true)
+![Preferences Page](https://github.com/paulgovan/QRAGadget/blob/master/preferences.PNG?raw=true)
 
 This should result in the following interactive map:
 
