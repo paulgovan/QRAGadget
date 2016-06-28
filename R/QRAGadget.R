@@ -34,10 +34,6 @@ labelFormat2 <- function (prefix = "", suffix = "", between = " &ndash; ", digit
   }
 }
 
-# Create a sample raster dataframe
-sample <- matrix(runif(36*36), ncol = 36, nrow = 36) %>%
-  data.frame()
-
 # QRA Gadget function
 QRAGadget <- function() {
 
@@ -243,6 +239,6 @@ QRAGadget <- function() {
     })
   }
 
-  runGadget(shinyApp(ui, server), viewer = dialogViewer("QRA Gadget", height = 800))
+  runGadget(shinyApp(ui, server), viewer = dialogViewer("QRA Gadget", height = 900))
 
 }
