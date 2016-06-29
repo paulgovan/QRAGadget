@@ -39,7 +39,7 @@ Launching the app brings up the *Input/Output* page. To find the dummy data, cli
 
 Choose a name for the output html file. After customizing the map, click *Done* to create a standalone html file in the working directory (Be sure not to save over a previously created map file!). Click *Cancel* any time to start over. 
 
-![Input/Output Page](https://github.com/paulgovan/QRAGadget/blob/master/InputOutput.PNG?raw=true)
+![Input/Output Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/InputOutput.PNG?raw=true)
 
 ## Raster
 
@@ -51,13 +51,13 @@ Finally, there is an option to disaggregate the raster layer and create a new on
 
 For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection, but check **Smooth** and enter 5 as the number of cells to disaggregate:
 
-![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/raster.PNG?raw=true)
+![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/raster.PNG?raw=true)
 
 ## Map
 
 To view the interactive map, click the *Map* icon. Click the *Reset* button at any time in order to reset the extents of the map.
 
-![Map Page](https://github.com/paulgovan/QRAGadget/blob/master/map.PNG?raw=true)
+![Map Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/map.PNG?raw=true)
 
 ## Preferences
 
@@ -71,11 +71,11 @@ The *Preferences* tab has a number of options for customizing the map:
 
 To try out some of these options, select the *PuOr* **Color Palette**, the *Esri.WorldImagery* **Map Tile**, and move the **Control Position** over to the *bottomleft*:
 
-![Preferences Page](https://github.com/paulgovan/QRAGadget/blob/master/preferences.PNG?raw=true)
+![Preferences Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/preferences.PNG?raw=true)
 
 This should result in the following interactive map:
 
-![Map Page 2](https://github.com/paulgovan/QRAGadget/blob/master/Map2.PNG?raw=true)
+![Map Page 2](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/Map2.PNG?raw=true)
 
 # Source Code
 QRAGadget is an [open source](http://opensource.org) project, and the source code is available at [https://github.com/paulgovan/QRAGadget](https://github.com/paulgovan/QRAGadget)
