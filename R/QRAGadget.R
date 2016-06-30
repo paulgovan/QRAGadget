@@ -1,12 +1,3 @@
-library(shiny)
-library(miniUI)
-library(rstudioapi)
-library(shinyIncubator)
-library(leaflet)
-library(raster)
-library(scales)
-library(htmlwidgets)
-
 # Modify labelFormat function to make scientific = TRUE the default
 labelFormat2 <- function (prefix = "", suffix = "", between = " &ndash; ", digits = 3,
                           big.mark = ",", transform = identity)
@@ -34,7 +25,11 @@ labelFormat2 <- function (prefix = "", suffix = "", between = " &ndash; ", digit
   }
 }
 
-# QRA Gadget function
+#' A Shiny Gadget for Interactive QRA Visualizations.
+#'
+#' Upload raster data and easily create interactive QRA visualizations. Select
+#' from numerous color palettes, basemaps, and different configurations.
+#'
 QRAGadget <- function() {
 
   # Get all of the objects in the global environment
@@ -113,7 +108,7 @@ QRAGadget <- function() {
                    )
       ),
       miniTabPanel("Map", icon = icon("globe"),
-                   miniContentPanel(leafletOutput("map", height = "100%")
+                   miniContentPanel(leaflet::leafletOutput("map", height = "100%")
                    ),
                    miniButtonBlock(
                      actionButton("resetMap", "Reset")
@@ -184,12 +179,12 @@ QRAGadget <- function() {
     # Create a raster image
     r <- reactive({
       req(input$xmn, input$xmx, input$ymn, input$ymx, input$projection)
-      r <- raster(nrows = nrow(data()), ncols = ncol(data()),
+      r <- raster::raster(nrows = nrow(data()), ncols = ncol(data()),
                   xmn = input$xmn, xmx = input$xmx, ymn = input$ymn, ymx = input$ymx)
       crs(r) <- sp::CRS(input$projection)
-      r <- setValues(r, vals()) %>%
-        flip(direction = 'y') %>%
-        disaggregate(input$dis, "bilinear")
+      r <- raster::setValues(r, vals()) %>%
+        raster::flip(direction = 'y') %>%
+        raster::disaggregate(input$dis, "bilinear")
     })
 
     # Create a map object
@@ -208,34 +203,34 @@ QRAGadget <- function() {
       }
 
       # Set color palette
-      col <- brewer_pal(palette = input$pal, direction = -1)(n)
-      pal <- colorBin(col, values(r()), bins = bins,
+      col <- scales::brewer_pal(palette = input$pal, direction = -1)(n)
+      pal <- leaflet::colorBin(col, values(r()), bins = bins,
                       na.color = "transparent")
 
       force(input$resetMap)
 
-      leaflet() %>%
-        addProviderTiles(input$tile, group = input$tile) %>%
+      leaflet::leaflet() %>%
+        leaflet::addProviderTiles(input$tile, group = input$tile) %>%
 
-        addRasterImage(r(), colors = pal, opacity = 0.5, group = input$title) %>%
+        leaflet::addRasterImage(r(), colors = pal, opacity = 0.5, group = input$title) %>%
 
-        addLayersControl(
+        leaflet::addLayersControl(
           baseGroups = c(input$tile),
           overlayGroups = input$title,
           position = input$control) %>%
 
-        addLegend(pal = pal, position = input$legend, values = values(r()),
+        leaflet::addLegend(pal = pal, position = input$legend, values = values(r()),
                   labFormat = labelFormat2(digits = 15), title = input$title)
     })
 
     # Plot a map
-    output$map <- renderLeaflet({
+    output$map <- leaflet::renderLeaflet({
       map()
     })
 
     observeEvent(input$done, {
       fileName <- paste0(input$fileName, ".html")
-      stopApp(saveWidget(map(), fileName))
+      stopApp(htmlwidgets::saveWidget(map(), fileName))
     })
   }
 

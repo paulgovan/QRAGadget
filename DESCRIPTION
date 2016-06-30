@@ -1,22 +1,25 @@
 Package: QRAGadget
-Type: Package
 Version: 0.1.0
 Title: A Shiny Gadget For Interactive QRA Visualizations
-Description: Upload raster data and easily create interactive QRA visualizations.
-Version: 0.1.0
-Author: Paul Govan
-Maintainer: Paul Govan <pgovan1@aggienetwork.com>
-License: MIT
+Description: Upload raster data and easily create interactive QRA visualizations. Select
+    from numerous color palettes, basemaps, and different configurations.
+URL: https://github.com/paulgovan/qragadget
+BugReports: https://github.com/paulgovan/qragadget/issues
+Authors@R: person("Paul", "Govan", email = "pgovan1@aggienetwork.com", role = c("aut", "cre"))
+Depends:
+    R (>= 2.10.0)
+License: Apache License
 LazyData: TRUE
+RoxygenNote: 5.0.1
 Imports:
-    shiny (>= 0.13),
-    miniUI (>= 0.1.1),
-    rstudioapi (>= 0.5),
-    shinyIncubator (>= 0.2.2),
-    leaflet (>= 1.0.1),
-    R.matlab (>= 3.5.1),
-    raster (>= 2.5),
-    scales (>= 0.4.0),
-    sp (>= 1.2),
-    htmlwidgets (>= 0.6)
+    dplyr,
+    htmlwidgets,
+    leaflet,
+    miniUI,
+    raster,
+    rstudioapi,
+    scales,
+    shiny,
+    shinyIncubator,
+    sp
 RoxygenNote: 5.0.1
