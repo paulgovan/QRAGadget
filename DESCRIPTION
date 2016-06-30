@@ -10,7 +10,6 @@ Depends:
     R (>= 2.10.0)
 License: Apache License
 LazyData: TRUE
-RoxygenNote: 5.0.1
 Imports:
     dplyr,
     htmlwidgets,
