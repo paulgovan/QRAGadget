@@ -96,7 +96,7 @@ QRAGadget <- function() {
                                                    width = "100%")
                      ),
                      conditionalPanel("input.radio == 2",
-                                      matrixInput('bins', label = NULL, initBins)
+                                      shinyIncubator::matrixInput('bins', label = NULL, initBins)
                      ),
                      hr(),
                      checkboxInput("check", strong("Smooth:")),
