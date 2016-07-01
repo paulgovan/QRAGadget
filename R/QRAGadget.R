@@ -32,6 +32,7 @@ labelFormat2 <- function (prefix = "", suffix = "", between = " &ndash; ", digit
 #' @import dplyr
 #' @import shiny
 #' @import miniUI
+#' @return A standalone html file
 #' @export
 #'
 QRAGadget <- function() {
