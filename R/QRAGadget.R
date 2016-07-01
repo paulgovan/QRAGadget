@@ -29,6 +29,10 @@ labelFormat2 <- function (prefix = "", suffix = "", between = " &ndash; ", digit
 #'
 #' Upload raster data and easily create interactive QRA visualizations. Select
 #' from numerous color palettes, basemaps, and different configurations.
+#' @import dplyr
+#' @import shiny
+#' @import miniUI
+#' @export
 #'
 QRAGadget <- function() {
 
