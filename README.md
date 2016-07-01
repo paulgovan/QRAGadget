@@ -10,9 +10,6 @@ To install QRAGadget in [R](https://www.r-project.org):
 
 ```
 devtools::install_github('paulgovan/QRAGadget')
-library(dplyr)
-library(shiny)
-library(miniUI)
 ```
 
 After installation, and if using [RStudio](https://www.rstudio.com/products/rstudio/) (v0.99.878 or later), the gadget will appear in the *Addins* dropdown menu. Otherwise, to launch the gadget, simply type:
