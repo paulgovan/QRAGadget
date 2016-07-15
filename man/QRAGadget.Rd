@@ -6,6 +6,9 @@
 \usage{
 QRAGadget()
 }
+\value{
+A standalone html file
+}
 \description{
 Upload raster data and easily create interactive QRA visualizations. Select
 from numerous color palettes, basemaps, and different configurations.

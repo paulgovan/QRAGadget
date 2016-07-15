@@ -32,6 +32,7 @@ labelFormat2 <- function (prefix = "", suffix = "", between = " &ndash; ", digit
 #' @import dplyr
 #' @import shiny
 #' @import miniUI
+#' @import rstudioapi
 #' @return A standalone html file
 #' @export
 #'
@@ -104,11 +105,8 @@ QRAGadget <- function() {
                                       shinyIncubator::matrixInput('bins', label = NULL, initBins)
                      ),
                      hr(),
-                     checkboxInput("check", strong("Smooth:")),
-                     conditionalPanel("input.check == 1",
-                                      numericInput("dis", "Number of cells to disaggregate:",
-                                                   1, min = 1, width = "100%")
-                     ),
+                                      numericInput("dis", "Number of cells to disaggregate (Smooth):",
+                                                   1, min = 1, width = "100%"),
                      br()
                    )
       ),
@@ -186,7 +184,7 @@ QRAGadget <- function() {
       req(input$xmn, input$xmx, input$ymn, input$ymx, input$projection)
       r <- raster::raster(nrows = nrow(data()), ncols = ncol(data()),
                   xmn = input$xmn, xmx = input$xmx, ymn = input$ymn, ymx = input$ymx)
-      crs(r) <- sp::CRS(input$projection)
+      raster::crs(r) <- sp::CRS(input$projection)
       r <- raster::setValues(r, vals()) %>%
         raster::flip(direction = 'y') %>%
         raster::disaggregate(input$dis, "bilinear")
@@ -209,7 +207,7 @@ QRAGadget <- function() {
 
       # Set color palette
       col <- scales::brewer_pal(palette = input$pal, direction = -1)(n)
-      pal <- leaflet::colorBin(col, values(r()), bins = bins,
+      pal <- leaflet::colorBin(col, raster::values(r()), bins = bins,
                       na.color = "transparent")
 
       force(input$resetMap)
@@ -224,7 +222,7 @@ QRAGadget <- function() {
           overlayGroups = input$title,
           position = input$control) %>%
 
-        leaflet::addLegend(pal = pal, position = input$legend, values = values(r()),
+        leaflet::addLegend(pal = pal, position = input$legend, values = raster::values(r()),
                   labFormat = labelFormat2(digits = 15), title = input$title)
     })
 

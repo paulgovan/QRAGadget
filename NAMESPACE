@@ -3,4 +3,5 @@
 export(QRAGadget)
 import(dplyr)
 import(miniUI)
+import(rstudioapi)
 import(shiny)
