@@ -2,7 +2,7 @@
 % Please edit documentation in R/QRAGadget.R
 \name{QRAGadget}
 \alias{QRAGadget}
-\title{A Shiny Gadget for Interactive QRA Visualizations.}
+\title{A 'Shiny' Gadget for Interactive QRA Visualizations.}
 \usage{
 QRAGadget()
 }
@@ -12,5 +12,11 @@ A standalone html file
 \description{
 Upload raster data and easily create interactive QRA visualizations. Select
 from numerous color palettes, basemaps, and different configurations.
+}
+\examples{
+if (interactive()) {
+  QRAGadget()
+}
+
 }
 

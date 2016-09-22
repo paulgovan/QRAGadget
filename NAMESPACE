@@ -2,6 +2,12 @@
 
 export(QRAGadget)
 import(dplyr)
+import(htmlwidgets)
+import(leaflet)
 import(miniUI)
+import(raster)
 import(rstudioapi)
+import(scales)
 import(shiny)
+import(shinyIncubator)
+import(sp)

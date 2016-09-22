@@ -1,6 +1,6 @@
 Package: QRAGadget
 Version: 0.1.0
-Title: A Shiny Gadget For Interactive QRA Visualizations
+Title: A 'Shiny' Gadget For Interactive QRA Visualizations
 Description: Upload raster data and easily create interactive QRA visualizations. Select
     from numerous color palettes, basemaps, and different configurations.
 URL: https://github.com/paulgovan/qragadget

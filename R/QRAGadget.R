@@ -25,16 +25,35 @@ labelFormat2 <- function (prefix = "", suffix = "", between = " &ndash; ", digit
   }
 }
 
-#' A Shiny Gadget for Interactive QRA Visualizations.
+# Set initial bins
+initBins = c(1e-16, 1e-15, 1e-14, 1e-13, 1e-12, 1e-11, 1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 0.0001) %>%
+  matrix(ncol = 1) %>%
+  data.frame()
+
+sample <- matrix(runif(36*36), ncol = 36, nrow = 36) %>%
+  data.frame()
+
+#' A 'Shiny' Gadget for Interactive QRA Visualizations.
 #'
 #' Upload raster data and easily create interactive QRA visualizations. Select
 #' from numerous color palettes, basemaps, and different configurations.
 #' @import dplyr
-#' @import shiny
+#' @import htmlwidgets
+#' @import leaflet
+#' @import magrittr
 #' @import miniUI
+#' @import raster
 #' @import rstudioapi
+#' @import scales
+#' @import shiny
+#' @import shinyIncubator
+#' @import sp
 #' @return A standalone html file
 #' @export
+#' @examples
+#' if (interactive()) {
+#'   QRAGadget()
+#' }
 #'
 QRAGadget <- function() {
 
@@ -44,11 +63,6 @@ QRAGadget <- function() {
   if(length(objects) == 0) stop("No objects found. Please create a data.frame to continue", call. = FALSE)
   # determine which are data frames
   dataChoices <- objects[sapply(objects, function(x) is.data.frame(get(x)))]
-
-  # Set initial bins
-  initBins = c(1e-16, 1e-15, 1e-14, 1e-13, 1e-12, 1e-11, 1e-10, 1e-9, 1e-8, 1e-7, 1e-6, 1e-5, 0.0001) %>%
-    matrix(ncol = 1) %>%
-    data.frame()
 
   ui <- miniPage(
     gadgetTitleBar("QRA Gadget"),
@@ -75,7 +89,8 @@ QRAGadget <- function() {
                      ),
                      hr(),
                      textInput("fileName", "File Name:", value = "myMap", width = "100%"),
-                     helpText("A standalone html file will be saved in your working directory with the above file name")
+                     helpText("A standalone html file will be saved in your working directory with the above file name"),
+                     bookmarkButton()
                    )
       ),
       miniTabPanel("Raster", icon = icon("picture-o"),
@@ -165,7 +180,7 @@ QRAGadget <- function() {
       if (input$radioData == 1) {
         req(input$file)
         inFile <- input$file
-        data <- read.csv(inFile$datapath)
+        data <- utils::read.csv(inFile$datapath)
       } else {
         req(input$radioData)
         data <- get(input$data)
@@ -237,6 +252,7 @@ QRAGadget <- function() {
     })
   }
 
+  enableBookmarking(store = "url")
   runGadget(shinyApp(ui, server), viewer = dialogViewer("QRA Gadget", height = 800))
 
 }
