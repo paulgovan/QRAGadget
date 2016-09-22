@@ -88,8 +88,9 @@ QRAGadget <- function() {
                                                   choices = dataChoices, width = "100%")
                      ),
                      hr(),
+                     helpText("A standalone html file will be saved in your working directory with the file name below."),
                      textInput("fileName", "File Name:", value = "myMap", width = "100%"),
-                     helpText("A standalone html file will be saved in your working directory with the above file name"),
+                     hr(),
                      bookmarkButton()
                    )
       ),
