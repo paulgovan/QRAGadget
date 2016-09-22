@@ -11,14 +11,14 @@ Depends:
 License: Apache License | file LICENSE
 LazyData: TRUE
 Imports:
-    dplyr,
     htmlwidgets,
     leaflet,
+    magrittr,
     miniUI,
     raster,
-    rstudioapi,
     scales,
     shiny,
     shinyIncubator,
     sp
+Remotes: rstudio/shiny-incubator
 RoxygenNote: 5.0.1

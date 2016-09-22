@@ -30,6 +30,7 @@ initBins = c(1e-16, 1e-15, 1e-14, 1e-13, 1e-12, 1e-11, 1e-10, 1e-9, 1e-8, 1e-7, 
   matrix(ncol = 1) %>%
   data.frame()
 
+# Create some sample data
 sample <- matrix(runif(36*36), ncol = 36, nrow = 36) %>%
   data.frame()
 
@@ -37,17 +38,15 @@ sample <- matrix(runif(36*36), ncol = 36, nrow = 36) %>%
 #'
 #' Upload raster data and easily create interactive QRA visualizations. Select
 #' from numerous color palettes, basemaps, and different configurations.
-#' @import dplyr
-#' @import htmlwidgets
-#' @import leaflet
-#' @import magrittr
+#' @importFrom htmlwidgets saveWidget
+#' @importFrom leaflet leaflet leafletOutput renderLeaflet colorBin addLegend addLayersControl addRasterImage addProviderTiles "%>%"
+#' @importFrom magrittr "%>%"
 #' @import miniUI
-#' @import raster
-#' @import rstudioapi
-#' @import scales
+#' @importFrom raster raster crs setValues flip disaggregate values
+#' @importFrom scales brewer_pal
 #' @import shiny
-#' @import shinyIncubator
-#' @import sp
+#' @importFrom shinyIncubator matrixInput
+#' @importFrom sp CRS
 #' @return A standalone html file
 #' @export
 #' @examples
