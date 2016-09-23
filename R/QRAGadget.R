@@ -45,7 +45,6 @@ sample <- matrix(runif(36*36), ncol = 36, nrow = 36) %>%
 #' @importFrom raster raster crs setValues flip disaggregate values
 #' @importFrom scales brewer_pal
 #' @import shiny
-#' @importFrom shinyIncubator matrixInput
 #' @importFrom sp CRS
 #' @return A standalone html file
 #' @export
@@ -117,7 +116,7 @@ QRAGadget <- function() {
                                                    width = "100%")
                      ),
                      conditionalPanel("input.radio == 2",
-                                      shinyIncubator::matrixInput('bins', label = NULL, initBins)
+                                      matrixInput('bins', label = NULL, initBins)
                      ),
                      hr(),
                                       numericInput("dis", "Number of cells to disaggregate (Smooth):",

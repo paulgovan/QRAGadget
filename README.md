@@ -3,7 +3,7 @@
 * Choose from numerous color palettes, basemaps, and different configurations
 
 # Overview
-QRAGadget is a [Shiny Gadget](http://shiny.rstudio.com/articles/gadgets.html) for creating interactive QRA visualizations. QRAGadget is powered by the excellent [leaflet](http://leafletjs.com/) and [raster](https://cran.r-project.org/web/packages/raster/vignettes/Raster.pdf) packages. While this gadget was initially intended for those interested in creating QRA visualizations, it may also be more generally applicable to anyone interested in visualizing raster data in an interactive map. 
+QRAGadget is a [Shiny Gadget](http://shiny.rstudio.com/articles/gadgets.html) for creating interactive QRA visualizations. QRAGadget is powered by the excellent [leaflet](http://leafletjs.com/) and [raster](https://cran.r-project.org/package=raster) packages. While this gadget was initially intended for those interested in creating QRA visualizations, it may also be more generally applicable to anyone interested in visualizing raster data in an interactive map. 
 
 # Getting Started
 To install QRAGadget in [R](https://www.r-project.org):
