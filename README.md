@@ -9,6 +9,12 @@ QRAGadget is a [Shiny Gadget](http://shiny.rstudio.com/articles/gadgets.html) fo
 To install QRAGadget in [R](https://www.r-project.org):
 
 ```
+install.packages("QRAGadget")
+```
+
+Or to install the latest developmental version:
+
+```
 devtools::install_github('paulgovan/QRAGadget')
 ```
 
