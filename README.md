@@ -43,7 +43,7 @@ QRAGadget()
 
 Launching the app brings up the *Input/Output* page. To find the dummy data, click *R Object* under **Data Type**, and then select *sample* from the dropdown menu.
 
-Choose a name for the output html file. After customizing the map, click *Done* to create a standalone html file in the working directory (Be sure not to save over a previously created map file!). Click *Cancel* any time to start over. 
+Choose a name for the output html file. After customizing the map, clicking *Done* will create a standalone html file in the current working directory (Be sure not to save over a previously created map file!). Click *Cancel* any time to start over. 
 
 ![Input/Output Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/InputOutput.PNG?raw=true)
 
