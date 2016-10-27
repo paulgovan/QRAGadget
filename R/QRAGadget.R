@@ -83,49 +83,44 @@ QRAGadget <- function() {
                      ),
                      conditionalPanel("input.radioData == 2",
                                       selectInput("data", "Data Frame:",
-                                                  choices = dataChoices, width = "100%")
+                                                  choices = dataChoices)
                      ),
                      hr(),
                      helpText("A standalone html file will be saved in your working directory with the file name below."),
-                     textInput("fileName", "File Name:", value = "myMap", width = "100%"),
+                     textInput("fileName", "File Name:", value = "myMap"),
                      hr(),
                      bookmarkButton()
                    )
       ),
       miniTabPanel("Raster", icon = icon("picture-o"),
                    miniContentPanel(
-                     numericInput("xmn", "XMIN:", value = -122.2116,
-                                  width = "100%"),
+                     numericInput("xmn", "XMIN:", value = -122.2116),
                      hr(),
-                     numericInput("xmx", "XMAX:", value = -122.1979,
-                                  width = "100%"),
+                     numericInput("xmx", "XMAX:", value = -122.1979),
                      hr(),
-                     numericInput("ymn", "YMIN:", value = 49.0719,
-                                  width = "100%"),
+                     numericInput("ymn", "YMIN:", value = 49.0719),
                      hr(),
-                     numericInput("ymx", "YMAX:", value = 49.0809,
-                                  width = "100%"),
+                     numericInput("ymx", "YMAX:", value = 49.0809),
                      hr(),
                      selectizeInput("projection", "Projection:",
                                     choices = "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs",
-                                    options = list(create = TRUE), width = "100%"),
+                                    options = list(create = TRUE)),
                      hr(),
                      radioButtons("radio", "Bins:", choices = c("Number"=1, "Cuts"=2)),
                      conditionalPanel("input.radio == 1",
-                                      numericInput("nbins", label = NULL, value = 10,
-                                                   width = "100%")
+                                      numericInput("nbins", label = NULL, value = 10)
                      ),
                      conditionalPanel("input.radio == 2",
                                       matrixInput('bins', label = NULL, initBins)
                      ),
                      hr(),
                                       numericInput("dis", "Number of cells to disaggregate (Smooth):",
-                                                   1, min = 1, width = "100%"),
+                                                   1, min = 1),
                      br()
                    )
       ),
       miniTabPanel("Map", icon = icon("globe"),
-                   miniContentPanel(leaflet::leafletOutput("map", height = "100%")
+                   miniContentPanel(leaflet::leafletOutput("map")
                    ),
                    miniButtonBlock(
                      actionButton("resetMap", "Reset")
@@ -133,14 +128,13 @@ QRAGadget <- function() {
       ),
       miniTabPanel("Preferences", icon = icon("cog"),
                    miniContentPanel(
-                     textInput("title", "Map Title:", value = "Risk Frequency",
-                               width = "100%"),
+                     textInput("title", "Map Title:", value = "Risk Frequency"),
                      hr(),
                      selectizeInput("pal", "Color Palette:",
                                     choice = c("Spectral", "RdYlGn", "RdYlBu",
                                                "RdGy", "RdBu", "PuOr", "PRGn",
                                                "PiYG", "BrBg"),
-                                    options = list(create = TRUE), width = "100%"),
+                                    options = list(create = TRUE)),
                      tags$a(href="http://colorbrewer2.org/", "colorbrewer2.org"),
                      hr(),
                      selectizeInput("tile", "Map Tile:",
@@ -154,18 +148,16 @@ QRAGadget <- function() {
                                                 "Esri.WorldImagery",
                                                 "CartoDB.Positron",
                                                 "CartoDB.DarkMatter"),
-                                    options = list(create = TRUE), width = "100%"),
+                                    options = list(create = TRUE)),
                      tags$a(href="http://leaflet-extras.github.io/leaflet-providers/preview/index.html", "leaflet-extras.github.io"),
                      hr(),
                      selectizeInput("control", "Control Position:",
                                     choices = c("bottomright", "topright",
-                                                "bottomleft", "topleft"),
-                                    width = "100%"),
+                                                "bottomleft", "topleft")),
                      hr(),
                      selectizeInput("legend", "Legend Position:",
                                     choices = c("topright", "bottomright",
-                                                "topleft", "bottomleft"),
-                                    width = "100%"),
+                                                "topleft", "bottomleft")),
                      br()
                    )
       )
@@ -252,6 +244,6 @@ QRAGadget <- function() {
   }
 
   enableBookmarking(store = "url")
-  runGadget(shinyApp(ui, server), viewer = dialogViewer("QRA Gadget", height = 800))
+  runGadget(shinyApp(ui, server), viewer = dialogViewer("QRA Gadget"))
 
 }
