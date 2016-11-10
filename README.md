@@ -21,7 +21,7 @@ devtools::install_github('paulgovan/QRAGadget')
 After installation, and if using [RStudio](https://www.rstudio.com/products/rstudio/) (v0.99.878 or later), the gadget will appear in the *Addins* dropdown menu. Otherwise, to launch the gadget, simply type:
 
 ```
-QRAGadget()
+QRAGadget::QRAGadget()
 ```
 
 # Example
@@ -38,7 +38,7 @@ sample <- matrix(runif(36*36), ncol = 36, nrow = 36) %>%
 Then launch the app:
 
 ```
-QRAGadget()
+QRAGadget::QRAGadget()
 ```
 
 Launching the app brings up the *Input/Output* page. To find the dummy data, click *R Object* under **Data Type**, and then select *sample* from the dropdown menu.
