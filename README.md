@@ -18,7 +18,7 @@ Or to install the latest developmental version:
 devtools::install_github('paulgovan/QRAGadget')
 ```
 
-After installation, and if using [RStudio](https://www.rstudio.com/products/rstudio/) (v0.99.878 or later), the gadget will appear in the *Addins* dropdown menu. Otherwise, to launch the gadget, simply type:
+After installation, and if using [RStudio](https://www.rstudio.com/products/rstudio/) (v0.99.878 or later), the gadget will appear in the `Addins` dropdown menu. Otherwise, to launch the gadget, simply type:
 
 ```
 QRAGadget::QRAGadget()
@@ -45,6 +45,8 @@ Launching the app brings up the *Input/Output* page. To find the dummy data, cli
 
 Choose a name for the output html file. After customizing the map, clicking *Done* will create a standalone html file in the current working directory (Be sure not to save over a previously created map file!). Click *Cancel* any time to start over. 
 
+To bookmark the app at any time, click the *Bookmark* button, which will create a unique url for the current state of the app.
+
 ![Input/Output Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/InputOutput.PNG?raw=true)
 
 ## Raster
@@ -53,9 +55,9 @@ To format the raster image, click the *Raster* icon. Here are a number of option
 
 To specify the bins for the color palette, click *Number* to select the total number of bins or *Cuts* to select both the number and the actual cut values for each bin.
 
-Finally, there is an option to disaggregate the raster layer and create a new one with a higher resolution (smaller cells) while also locally interpolating between the new cell values (smoothed cells). To disaggregate the raster layer, check **Smooth**, and then enter the number of cells to disaggregate.
+Finally, there is an option to disaggregate the raster layer and create a new one with a higher resolution (smaller cells) while also locally interpolating between the new cell values (smoothed cells). To disaggregate the raster layer, enter the number of cells to disaggregate.
 
-For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection, but check **Smooth** and enter 5 as the number of cells to disaggregate:
+For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection, but enter 5 as the number of cells to disaggregate:
 
 ![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/raster.PNG?raw=true)
 
