@@ -50,6 +50,10 @@ labelFormat2 <-
     }
   }
 
+# Create some sample data
+sample <- matrix(runif(36 * 36), ncol = 36, nrow = 36) %>%
+  data.frame()
+
 # Set initial bins
 initBins = c(1e-16,
              1e-15,
@@ -67,10 +71,6 @@ initBins = c(1e-16,
   matrix(ncol = 1) %>%
   data.frame()
 
-# Create some sample data
-sample <- matrix(runif(36 * 36), ncol = 36, nrow = 36) %>%
-  data.frame()
-
 #' A 'Shiny' Gadget for Interactive QRA Visualizations.
 #'
 #' Upload raster data and easily create interactive QRA visualizations. Select
@@ -82,6 +82,7 @@ sample <- matrix(runif(36 * 36), ncol = 36, nrow = 36) %>%
 #' @importFrom raster raster crs setValues flip disaggregate values
 #' @importFrom scales brewer_pal
 #' @import shiny
+#' @importFrom shinyWidgets radioGroupButtons
 #' @importFrom sp CRS
 #' @return A standalone html file
 #' @export
@@ -109,10 +110,11 @@ QRAGadget <- function() {
         "Input/Output",
         icon = icon("search"),
         miniContentPanel(
-          radioButtons(
+          shinyWidgets::radioGroupButtons(
             "radioData",
             "Input Type:",
-            choices = c("File Upload" = 1, "Data Frame" = 2)
+            choices = c("File Upload" = 1, "Data Frame" = 2),
+            selected = 2
           ),
           hr(),
           conditionalPanel("input.radioData == 1",
@@ -161,9 +163,11 @@ QRAGadget <- function() {
             options = list(create = TRUE)
           ),
           hr(),
-          radioButtons("radio", "Bins:", choices = c(
-            "Number" = 1, "Cuts" = 2
-          )),
+          shinyWidgets::radioGroupButtons("radio", "Bins:",
+                                          choices = c("Number" = 1, "Cuts" = 2),
+                                          selected = 1
+          ),
+          br(),
           conditionalPanel(
             "input.radio == 1",
             numericInput("nbins", label = NULL, value = 10)

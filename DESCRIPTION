@@ -18,5 +18,6 @@ Imports:
     raster,
     scales,
     shiny,
+    shinyWidgets,
     sp
 RoxygenNote: 5.0.1
