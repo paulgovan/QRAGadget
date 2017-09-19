@@ -16,4 +16,3 @@ matrixInput(inputId, label, data)
 \description{
 Creates an adjustable-length matrix input.
 }
-
