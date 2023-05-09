@@ -146,7 +146,7 @@ QRAGadget <- function() {
       ),
       miniTabPanel(
         "Raster",
-        icon = icon("picture-o"),
+        icon = icon("image"),
         miniContentPanel(
           numericInput("xmn", "XMIN:", value = -122.2116),
           hr(),

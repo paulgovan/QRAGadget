@@ -1,9 +1,9 @@
 {
-    "path" : "~/Documents/QRAGadget",
-    "sortOrder" : [
+    "path": "~/Documents/QRAGadget/inst/tableinput",
+    "sortOrder": [
         {
-            "ascending" : true,
-            "columnIndex" : 2
+            "columnIndex": 2,
+            "ascending": true
         }
     ]
 }
