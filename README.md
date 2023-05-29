@@ -85,14 +85,3 @@ This should result in the following interactive map:
 
 ![Map Page 2](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/Map2.PNG?raw=true)
 
-# Source Code
-QRAGadget is an [open source](http://opensource.org) project, and the source code is available at [https://github.com/paulgovan/QRAGadget](https://github.com/paulgovan/QRAGadget)
-
-# Issues
-This project is in its *very* early stages. Please let us know if there are things you would like to see (or things you don't like!) by opening up an issue using the GitHub issue tracker at [https://github.com/paulgovan/QRAGadget/issues](https://github.com/paulgovan/QRAGadget/issues)
-
-# Contributions
-Contributions are welcome by sending a [pull request](https://github.com/paulgovan/QRAGadget/pulls)
-
-# License
-QRAGadget is licensed under the [Apache](http://www.apache.org/licenses/LICENSE-2.0) licence. &copy; Paul Govan (2016)
