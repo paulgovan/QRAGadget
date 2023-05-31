@@ -1,4 +1,4 @@
-# Features
+# QRAGadget
 * Easily create Quantitative Risk Analysis (QRA) visualizations
 * Choose from numerous color palettes, basemaps, and different configurations
 
@@ -47,7 +47,7 @@ Choose a name for the output html file. After customizing the map, clicking *Don
 
 To bookmark the app at any time, click the *Bookmark* button, which will create a unique url for the current state of the app.
 
-![Input/Output Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/InputOutput.PNG?raw=true)
+![](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/InputOutput.PNG?raw=true)
 
 ## Raster
 
@@ -59,7 +59,7 @@ Finally, there is an option to disaggregate the raster layer and create a new on
 
 For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection, but enter 5 as the number of cells to disaggregate:
 
-![Raster Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/raster.PNG?raw=true)
+![](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/raster.PNG?raw=true)
 
 ## Map
 
@@ -79,9 +79,9 @@ The *Preferences* tab has a number of options for customizing the map:
 
 To try out some of these options, select the *PuOr* **Color Palette**, the *Esri.WorldImagery* **Map Tile**, and move the **Control Position** over to the *bottomleft*:
 
-![Preferences Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/preferences.PNG?raw=true)
+![](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/preferences.PNG?raw=true)
 
 This should result in the following interactive map:
 
-![Map Page 2](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/Map2.PNG?raw=true)
+![](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/Map2.PNG?raw=true)
 
