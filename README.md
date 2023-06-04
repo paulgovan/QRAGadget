@@ -65,7 +65,7 @@ For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well 
 
 To view the interactive map, click the *Map* icon. Click the *Reset* button at any time in order to reset the extents of the map.
 
-![Map Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/map.PNG?raw=true)
+![](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/map.PNG?raw=true)
 
 ## Preferences
 
