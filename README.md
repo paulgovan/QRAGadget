@@ -1,3 +1,7 @@
+![](http://www.r-pkg.org/badges/version/QRAGadget)
+![](http://cranlogs.r-pkg.org/badges/grand-total/QRAGadget)
+![](http://cranlogs.r-pkg.org/badges/QRAGadget)
+
 # QRAGadget
 * Easily create Quantitative Risk Analysis (QRA) visualizations
 * Choose from numerous color palettes, basemaps, and different configurations
