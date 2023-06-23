@@ -28,7 +28,7 @@
     
     <a class="navbar-brand me-2" href="index.html">QRAGadget</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -39,6 +39,9 @@
       <ul class="navbar-nav me-auto">
 <li class="nav-item">
   <a class="nav-link" href="reference/index.html">Reference</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="news/index.html">Changelog</a>
 </li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
@@ -71,7 +74,7 @@
 <div class="section level1">
 <h1 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h1>
-<p>QRAGadget is a <a href="http://shiny.rstudio.com/articles/gadgets.html" class="external-link">Shiny Gadget</a> for creating interactive QRA visualizations. QRAGadget is powered by the excellent <a href="http://leafletjs.com/" class="external-link">leaflet</a> and <a href="https://cran.r-project.org/package=raster" class="external-link">raster</a> packages. While this gadget was initially intended for those interested in creating QRA visualizations, it may also be more generally applicable to anyone interested in visualizing raster data in an interactive map.</p>
+<p>QRAGadget is a <a href="https://shiny.rstudio.com/articles/gadgets.html" class="external-link">Shiny Gadget</a> for creating interactive QRA visualizations. QRAGadget is powered by the excellent <a href="https://leafletjs.com/" class="external-link">leaflet</a> and <a href="https://cran.r-project.org/package=raster" class="external-link">raster</a> packages. While this gadget was initially intended for those interested in creating QRA visualizations, it may also be more generally applicable to anyone interested in visualizing raster data in an interactive map.</p>
 </div>
 <div class="section level1">
 <h1 id="getting-started">Getting Started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
@@ -80,7 +83,7 @@
 <pre><code><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"QRAGadget"</span><span class="op">)</span></span></code></pre>
 <p>Or to install the latest developmental version:</p>
 <pre><code><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'paulgovan/QRAGadget'</span><span class="op">)</span></span></code></pre>
-<p>After installation, and if using <a href="https://www.rstudio.com/products/rstudio/" class="external-link">RStudio</a> (v0.99.878 or later), the gadget will appear in the <code>Addins</code> dropdown menu. Otherwise, to launch the gadget, simply type:</p>
+<p>After installation, and if using <a href="https://posit.co/products/open-source/rstudio/" class="external-link">RStudio</a> (v0.99.878 or later), the gadget will appear in the <code>Addins</code> dropdown menu. Otherwise, to launch the gadget, simply type:</p>
 <pre><code><span><span class="fu">QRAGadget</span><span class="fu">::</span><span class="fu"><a href="reference/QRAGadget.html">QRAGadget</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
 </div>
 <div class="section level1">
@@ -120,8 +123,8 @@
 <p>The <em>Preferences</em> tab has a number of options for customizing the map:</p>
 <ul>
 <li>The title of the map</li>
-<li>The color palette (see <a href="colorbrewer2.org">colorbrewer2.org</a>)</li>
-<li>The basemap (see <a href="http://leaflet-extras.github.io/leaflet-providers/preview/index.html" class="external-link">http://leaflet-extras.github.io</a>)</li>
+<li>The color palette (see <a href="https://colorbrewer2.org" class="external-link">colorbrewer2.org</a>)</li>
+<li>The basemap (see <a href="https://leaflet-extras.github.io/leaflet-providers/preview/index.html" class="external-link">http://leaflet-extras.github.io</a>)</li>
 <li>The control position</li>
 <li>The legend position</li>
 </ul>
@@ -144,8 +147,7 @@
 <div class="license">
 <h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
-<li>Apache License | file <a href="LICENSE-text.html">LICENSE</a>
-</li>
+<li>Apache License</li>
 </ul>
 </div>
 
