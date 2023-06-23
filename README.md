@@ -3,7 +3,7 @@
 * Choose from numerous color palettes, basemaps, and different configurations
 
 # Overview
-QRAGadget is a [Shiny Gadget](http://shiny.rstudio.com/articles/gadgets.html) for creating interactive QRA visualizations. QRAGadget is powered by the excellent [leaflet](http://leafletjs.com/) and [raster](https://cran.r-project.org/package=raster) packages. While this gadget was initially intended for those interested in creating QRA visualizations, it may also be more generally applicable to anyone interested in visualizing raster data in an interactive map. 
+QRAGadget is a [Shiny Gadget](https://shiny.rstudio.com/articles/gadgets.html) for creating interactive QRA visualizations. QRAGadget is powered by the excellent [leaflet](https://leafletjs.com/) and [raster](https://cran.r-project.org/package=raster) packages. While this gadget was initially intended for those interested in creating QRA visualizations, it may also be more generally applicable to anyone interested in visualizing raster data in an interactive map. 
 
 # Getting Started
 To install QRAGadget in [R](https://www.r-project.org):
@@ -18,7 +18,7 @@ Or to install the latest developmental version:
 devtools::install_github('paulgovan/QRAGadget')
 ```
 
-After installation, and if using [RStudio](https://www.rstudio.com/products/rstudio/) (v0.99.878 or later), the gadget will appear in the `Addins` dropdown menu. Otherwise, to launch the gadget, simply type:
+After installation, and if using [RStudio](https://posit.co/products/open-source/rstudio/) (v0.99.878 or later), the gadget will appear in the `Addins` dropdown menu. Otherwise, to launch the gadget, simply type:
 
 ```
 QRAGadget::QRAGadget()
@@ -72,8 +72,8 @@ To view the interactive map, click the *Map* icon. Click the *Reset* button at a
 The *Preferences* tab has a number of options for customizing the map:
 
 * The title of the map
-* The color palette (see [colorbrewer2.org](colorbrewer2.org))
-* The basemap (see [http://leaflet-extras.github.io](http://leaflet-extras.github.io/leaflet-providers/preview/index.html))
+* The color palette (see [colorbrewer2.org](https://colorbrewer2.org))
+* The basemap (see [http://leaflet-extras.github.io](https://leaflet-extras.github.io/leaflet-providers/preview/index.html))
 * The control position
 * The legend position
 

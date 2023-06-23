@@ -1,5 +1,5 @@
 Package: QRAGadget
-Version: 0.1.0
+Version: 0.2.0
 Title: A 'Shiny' Gadget for Interactive 'QRA' Visualizations
 Description: Upload raster data and easily create interactive quantitative risk analysis 'QRA' visualizations. Select
     from numerous color palettes, base-maps, and different configurations.
@@ -9,8 +9,7 @@ BugReports: https://github.com/paulgovan/qragadget/issues
 Authors@R: person("Paul", "Govan", email = "pgovan1@aggienetwork.com", role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0002-1821-8492"))
 Depends:
     R (>= 2.10.0)
-License: Apache License | file LICENSE
-LazyData: TRUE
+License: Apache License
 Imports:
     htmlwidgets,
     leaflet,

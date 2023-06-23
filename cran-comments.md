@@ -1,15 +1,12 @@
 ## Test environments
-* local OS X install, R 3.1.1
+* local OS X install, R 4.2.3
 * win-builder (devel and release)
 
 ## R CMD check results
-There were no ERRORs or WARNINGs.
+There were no ERRORs, WARNINGs, or NOTEs.
 
-There was 1 NOTE:
-
-* NOTE Maintainer: 'Paul Govan <pgovan1@aggienetwork.com>'
-
-New submission
-  
 ## Downstream dependencies
-There are currently no downstream dependencies for this package.
+We checked 0 reverse dependencies, comparing R CMD check results across CRAN and dev versions of this package.
+
+ * We saw 0 new problems
+ * We failed to check 0 packages
