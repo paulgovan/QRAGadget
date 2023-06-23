@@ -1,3 +1,8 @@
+![](http://www.r-pkg.org/badges/version/QRAGadget)
+![](http://cranlogs.r-pkg.org/badges/grand-total/QRAGadget)
+![](http://cranlogs.r-pkg.org/badges/QRAGadget)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1145431.svg)](https://doi.org/10.5281/zenodo.1145431)
+
 # QRAGadget
 * Easily create Quantitative Risk Analysis (QRA) visualizations
 * Choose from numerous color palettes, basemaps, and different configurations
@@ -65,7 +70,7 @@ For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well 
 
 To view the interactive map, click the *Map* icon. Click the *Reset* button at any time in order to reset the extents of the map.
 
-![Map Page](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/map.PNG?raw=true)
+![](https://github.com/paulgovan/QRAGadget/blob/master/inst/images/map.PNG?raw=true)
 
 ## Preferences
 
