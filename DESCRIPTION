@@ -1,5 +1,5 @@
 Package: QRAGadget
-Version: 0.3.0
+Version: 0.3.0.9000
 Title: A 'Shiny' Gadget for Interactive 'QRA' Visualizations
 Description: Upload raster data and easily create interactive quantitative risk analysis 'QRA' visualizations. Select
     from numerous color palettes, base-maps, and different configurations.
