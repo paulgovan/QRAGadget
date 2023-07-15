@@ -5,7 +5,7 @@ citEntry(
   title    = "QRAGadget: A Shiny Gadget for Interactive QRA Visualizations",
   author   = "Paul Govan",
   year     = "2023",
-  note     = "R package version 0.1.0",
+  note     = "R package version 0.3.1",
   url      = "https://CRAN.R-project.org/package=energyr",
   doi      = "10.5281/zenodo.1145429",
   textVersion = paste(
