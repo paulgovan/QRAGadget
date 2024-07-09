@@ -1,14 +1,11 @@
 citHeader("To cite QRAGadget in publications use:")
 
-citEntry(
-  entry    = "Manual",
+bibentry(
+  bibtype    = "Manual",
   title    = "QRAGadget: A Shiny Gadget for Interactive QRA Visualizations",
   author   = "Paul Govan",
   year     = "2023",
   note     = "R package version 0.3",
   url      = "https://CRAN.R-project.org/package=QRAGadget",
   doi      = "10.32614/CRAN.package.QRAGadget",
-  textVersion = paste(
-
-  )
 )

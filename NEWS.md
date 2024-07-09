@@ -1,6 +1,9 @@
-# QRAGadget (development version)
+# QRAGadget 0.3.2
 
-# QRAGadget 0.3.0
+## Minor Improvements and Bug Fixes
+
+* Update contact info
+* Update citation
 
 # QRAGadget 0.2.0
 

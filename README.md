@@ -1,7 +1,9 @@
-![](http://www.r-pkg.org/badges/version/QRAGadget)
+<!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/QRAGadget)](https://CRAN.R-project.org/package=QRAGadget)
 ![](http://cranlogs.r-pkg.org/badges/grand-total/QRAGadget)
 ![](http://cranlogs.r-pkg.org/badges/QRAGadget)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1145431.svg)](https://doi.org/10.5281/zenodo.1145431)
+<!-- badges: end -->
 
 # QRAGadget
 * Easily create Quantitative Risk Analysis (QRA) visualizations
