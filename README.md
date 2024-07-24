@@ -1,7 +1,8 @@
 <!-- badges: start -->
 [![CRAN status](https://www.r-pkg.org/badges/version/QRAGadget)](https://CRAN.R-project.org/package=QRAGadget)
-![](http://cranlogs.r-pkg.org/badges/grand-total/QRAGadget)
-![](http://cranlogs.r-pkg.org/badges/QRAGadget)
+[![CRAN checks](https://badges.cranchecks.info/summary/QRAGadget.svg)](https://cran.r-project.org/web/checks/check_results_QRAGadget.html)
+[![](http://cranlogs.r-pkg.org/badges/grand-total/QRAGadget)](https://cran.r-project.org/package=QRAGadget)
+[![](http://cranlogs.r-pkg.org/badges/last-month/QRAGadget)](https://cran.r-project.org/package=QRAGadget)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1145431.svg)](https://doi.org/10.5281/zenodo.1145431)
 <!-- badges: end -->
 
