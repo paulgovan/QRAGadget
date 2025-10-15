@@ -1,6 +1,3 @@
-#' @import shiny
-NULL
-
 #' Matrix input
 #'
 #' Creates an adjustable-length matrix input.
@@ -8,53 +5,57 @@ NULL
 #' @param inputId Input variable to assign the control's value to.
 #' @param label Display label for the control.
 #' @param data The initial values to use for the matrix.
+#' @import shiny
 #' @return A matrix input control that can be added to a UI definition.
-#' The value of the input will be a data frame.
 #' @examples
 #' if (interactive()) {
-#'  library(shiny)
-#'  library(shinyIncubator)
-#'  ui <- fluidPage(
-#'  matrixInput('mat', 'Matrix input', data = data.frame(A =
-#'  1:3, B = 4:6))
-#'  )
-#'  server <- function(input, output, session) {
-#'  observe({
-#'  str(input$mat)
-#'  })
-#'  }
-#'  shinyApp(ui, server)
-#'  }
-#'  # Note: This code is adapted from the shinyIncubator package, which is no longer
-#'  # actively maintained. Use at your own risk.
+#'   library(shiny)
+#'   ui <- fluidPage(
+#'     matrixInput("mat", "Matrix input", data = data.frame(
+#'       A =
+#'         1:3, B = 4:6
+#'     ))
+#'   )
+#'   server <- function(input, output, session) {
+#'     observe({
+#'       str(input$mat)
+#'     })
+#'   }
+#'   shinyApp(ui, server)
+#' }
+#' # Note: This code is adapted from the shinyIncubator package, which is no longer
+#' # actively maintained. Use at your own risk.
 #'
 #' @export
 matrixInput <- function(inputId, label, data) {
   addResourcePath(
-    prefix='tableinput',
-    directoryPath=system.file('tableinput',
-                              package='shinyIncubator'))
+    prefix = "tableinput",
+    directoryPath = system.file("tableinput",
+      package = "shinyIncubator"
+    )
+  )
 
   tagList(
     singleton(
       tags$head(
-        tags$link(rel = 'stylesheet',
-                  type = 'text/css',
-                  href = 'tableinput/tableinput.css'),
-        tags$script(src = 'tableinput/tableinput.js')
+        tags$link(
+          rel = "stylesheet",
+          type = "text/css",
+          href = "tableinput/tableinput.css"
+        ),
+        tags$script(src = "tableinput/tableinput.js")
       )
     ),
-
     tags$div(
-      class = 'control-group tableinput-container',
+      class = "control-group tableinput-container",
       tags$label(
         class = "control-label",
         label,
         tags$div(
-          class = 'tableinput-buttons',
+          class = "tableinput-buttons",
           tags$button(
-            type = 'button', class = 'btn btn-mini tableinput-settings hide',
-            tags$i(class = 'glyphicon glyphicon-cog icon-cog')
+            type = "button", class = "btn btn-mini tableinput-settings hide",
+            tags$i(class = "glyphicon glyphicon-cog icon-cog")
           ),
           HTML('<a href="#" class="tableinput-plusrow"><i class="glyphicon glyphicon-plus-sign icon-plus-sign"></i></a>'),
           HTML('<a href="#" class="tableinput-minusrow"><i class="glyphicon glyphicon-minus-sign icon-minus-sign"></i></a>')
@@ -62,16 +63,18 @@ matrixInput <- function(inputId, label, data) {
       ),
       tags$table(
         id = inputId,
-        class = 'tableinput data table table-bordered table-condensed',
+        class = "tableinput data table table-bordered table-condensed",
         tags$colgroup(
           lapply(names(data), function(name) {
-            tags$col('data-name' = name,
-                     'data-field' = name,
-                     'data-type' = 'numeric')
+            tags$col(
+              "data-name" = name,
+              "data-field" = name,
+              "data-type" = "numeric"
+            )
           })
         ),
         tags$thead(
-          class = 'hide',
+          class = "hide",
           tags$tr(
             lapply(names(data), function(name) {
               tags$th(name)
@@ -83,7 +86,7 @@ matrixInput <- function(inputId, label, data) {
             tags$tr(
               lapply(names(data), function(name) {
                 tags$td(
-                  div(tabindex=0, as.character(data[i,name]))
+                  div(tabindex = 0, as.character(data[i, name]))
                 )
               })
             )
@@ -91,15 +94,14 @@ matrixInput <- function(inputId, label, data) {
         )
       ),
       tags$div(
-        class = 'tableinput-editor modal hide fade',
+        class = "tableinput-editor modal hide fade",
         tags$div(
-          class = 'modal-header',
+          class = "modal-header",
           HTML('<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>'),
           tags$h3(label)
         ),
         tags$div(
-          class = 'modal-body',
-
+          class = "modal-body",
           HTML('
 <form class="form-horizontal">
   <div class="control-group">
@@ -114,17 +116,18 @@ matrixInput <- function(inputId, label, data) {
       <input type="number" class="tableinput-colcount">
     </div>
   </div>
-</form>'
-          )
+</form>')
         ),
         tags$div(
-          class = 'modal-footer',
-          tags$a(href = '#', class = 'btn btn-primary tableinput-edit', 'OK'),
-          tags$a(href = '#',
-                 class = 'btn',
-                 'data-dismiss' = 'modal',
-                 'aria-hidden' = 'true',
-                 'Cancel')
+          class = "modal-footer",
+          tags$a(href = "#", class = "btn btn-primary tableinput-edit", "OK"),
+          tags$a(
+            href = "#",
+            class = "btn",
+            "data-dismiss" = "modal",
+            "aria-hidden" = "true",
+            "Cancel"
+          )
         )
       )
     )

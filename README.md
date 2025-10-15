@@ -44,7 +44,7 @@ install.packages("QRAGadget")
 Or to install the latest development version:
 
 ``` r
-devtools::install_github('paulgovan/QRAGadget')
+devtools::install_github("paulgovan/QRAGadget")
 ```
 
 After installation, and if using
