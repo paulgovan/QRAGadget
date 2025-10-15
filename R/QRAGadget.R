@@ -75,6 +75,7 @@ initBins = c(1e-16,
 #'
 #' Upload raster data and easily create interactive QRA visualizations. Select
 #' from numerous color palettes, basemaps, and different configurations.
+#'
 #' @importFrom htmlwidgets saveWidget
 #' @importFrom leaflet leaflet leafletOutput renderLeaflet colorBin addLegend addLayersControl addRasterImage addProviderTiles "%>%"
 #' @importFrom magrittr "%>%"
@@ -84,11 +85,11 @@ initBins = c(1e-16,
 #' @import shiny
 #' @importFrom shinyWidgets radioGroupButtons
 #' @importFrom sp CRS
-#' @return A standalone html file
+#' @return The function launches a Shiny Gadget.
 #' @export
 #' @examples
 #' if (interactive()) {
-#'   QRAGadget()
+#'   QRAGadget::QRAGadget()
 #' }
 #'
 QRAGadget <- function() {

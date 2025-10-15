@@ -9,3 +9,6 @@
 ^LICENSE$
 ^revdep$
 ^CRAN-SUBMISSION$
+^README\.Rmd$
+^CODE_OF_CONDUCT\.md$
+^codemeta\.json$

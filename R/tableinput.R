@@ -1,5 +1,3 @@
-# Disclaimer: I take no credit for the following code, which is courtesy of https://github.com/rstudio/shiny-incubator.
-
 #' @import shiny
 NULL
 
@@ -10,6 +8,25 @@ NULL
 #' @param inputId Input variable to assign the control's value to.
 #' @param label Display label for the control.
 #' @param data The initial values to use for the matrix.
+#' @return A matrix input control that can be added to a UI definition.
+#' The value of the input will be a data frame.
+#' @examples
+#' if (interactive()) {
+#'  library(shiny)
+#'  library(shinyIncubator)
+#'  ui <- fluidPage(
+#'  matrixInput('mat', 'Matrix input', data = data.frame(A =
+#'  1:3, B = 4:6))
+#'  )
+#'  server <- function(input, output, session) {
+#'  observe({
+#'  str(input$mat)
+#'  })
+#'  }
+#'  shinyApp(ui, server)
+#'  }
+#'  # Note: This code is adapted from the shinyIncubator package, which is no longer
+#'  # actively maintained. Use at your own risk.
 #'
 #' @export
 matrixInput <- function(inputId, label, data) {

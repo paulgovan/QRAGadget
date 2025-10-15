@@ -1,6 +1,0 @@
-package,old,new,delta
-QRAGadget,0.1.0,0.2.0,*
-bslib,NA,0.5.0,*
-sp,NA,1.6-1,*
-terra,NA,1.7-29,*
-vctrs,NA,0.6.3,*
