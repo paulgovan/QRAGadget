@@ -8,8 +8,8 @@
 <title>A Shiny Gadget for Interactive QRA Visualizations • QRAGadget</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.4.2/css/all.min.css" rel="stylesheet">
-<link href="deps/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="A Shiny Gadget for Interactive QRA Visualizations">
 <meta name="description" content="Upload raster data and easily create interactive quantitative risk analysis QRA visualizations. Select from numerous color palettes, base-maps, and different configurations.">
 <meta property="og:description" content="Upload raster data and easily create interactive quantitative risk analysis QRA visualizations. Select from numerous color palettes, base-maps, and different configurations.">
@@ -32,6 +32,12 @@
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
+<li><a class="dropdown-item" href="articles/Usage.html">Getting Started</a></li>
+  </ul>
+</li>
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
@@ -46,10 +52,16 @@
   </div>
 </nav><div class="container template-home">
 <div class="row">
-  <main id="main" class="col-md-9">
-<div class="section level1">
+  <main id="main" class="col-md-9"><div class="section level1">
 <div class="page-header"><h1 id="qragadget">QRAGadget<a class="anchor" aria-label="anchor" href="#qragadget"></a>
 </h1></div>
+<!-- badges: start -->
+
+<!-- badges: end -->
+</div>
+<div class="section level1">
+<h1 id="features">Features<a class="anchor" aria-label="anchor" href="#features"></a>
+</h1>
 <ul>
 <li>Easily create Quantitative Risk Analysis (QRA) visualizations</li>
 <li>Choose from numerous color palettes, basemaps, and different configurations</li>
@@ -61,61 +73,22 @@
 <p>QRAGadget is a <a href="https://shiny.rstudio.com/articles/gadgets.html" class="external-link">Shiny Gadget</a> for creating interactive QRA visualizations. QRAGadget is powered by the excellent <a href="https://leafletjs.com/" class="external-link">leaflet</a> and <a href="https://cran.r-project.org/package=raster" class="external-link">raster</a> packages. While this gadget was initially intended for those interested in creating QRA visualizations, it may also be more generally applicable to anyone interested in visualizing raster data in an interactive map.</p>
 </div>
 <div class="section level1">
-<h1 id="getting-started">Getting Started<a class="anchor" aria-label="anchor" href="#getting-started"></a>
+<h1 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h1>
 <p>To install QRAGadget in <a href="https://www.r-project.org" class="external-link">R</a>:</p>
-<pre><code><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"QRAGadget"</span><span class="op">)</span></span></code></pre>
-<p>Or to install the latest developmental version:</p>
-<pre><code><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'paulgovan/QRAGadget'</span><span class="op">)</span></span></code></pre>
-<p>After installation, and if using <a href="https://posit.co/products/open-source/rstudio/" class="external-link">RStudio</a> (v0.99.878 or later), the gadget will appear in the <code>Addins</code> dropdown menu. Otherwise, to launch the gadget, simply type:</p>
-<pre><code><span><span class="fu">QRAGadget</span><span class="fu">::</span><span class="fu"><a href="reference/QRAGadget.html">QRAGadget</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
-</div>
-<div class="section level1">
-<h1 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
-</h1>
-<div class="section level2">
-<h2 id="inputoutput">Input/Output<a class="anchor" aria-label="anchor" href="#inputoutput"></a>
-</h2>
-<p>QRAGadget currently accepts two primary types of raster data: (1) a file upload (in csv format) or (2) an R <code>data.frame</code> object. In order to explore the gadget, create some dummy data:</p>
-<pre><code><span><span class="va">sample</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/matrix.html" class="external-link">matrix</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/stats/Uniform.html" class="external-link">runif</a></span><span class="op">(</span><span class="fl">36</span><span class="op">*</span><span class="fl">36</span><span class="op">)</span>, ncol <span class="op">=</span> <span class="fl">36</span>, nrow <span class="op">=</span> <span class="fl">36</span><span class="op">)</span> <span class="op">%&gt;%</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
-<p>Then launch the app:</p>
-<pre><code><span><span class="fu">QRAGadget</span><span class="fu">::</span><span class="fu"><a href="reference/QRAGadget.html">QRAGadget</a></span><span class="op">(</span><span class="op">)</span></span></code></pre>
-<p>Launching the app brings up the <em>Input/Output</em> page. To find the dummy data, click <em>R Object</em> under <strong>Data Type</strong>, and then select <em>sample</em> from the dropdown menu.</p>
-<p>Choose a name for the output html file. After customizing the map, clicking <em>Done</em> will create a standalone html file in the current working directory (Be sure not to save over a previously created map file!). Click <em>Cancel</em> any time to start over.</p>
-<p>To bookmark the app at any time, click the <em>Bookmark</em> button, which will create a unique url for the current state of the app.</p>
-<p><img src="https://github.com/paulgovan/QRAGadget/blob/master/inst/images/InputOutput.PNG?raw=true"></p>
-</div>
-<div class="section level2">
-<h2 id="raster">Raster<a class="anchor" aria-label="anchor" href="#raster"></a>
-</h2>
-<p>To format the raster image, click the <em>Raster</em> icon. Here are a number of options for specifying the extents of the raster image (XMIN, XMAX, YMIN, and YMAX) as well as the <a href="https://rstudio.github.io/leaflet/raster.html" class="external-link">projection</a> of the raster layer. It is very important that the raster layer be tagged with the correct project coordinate reference system.</p>
-<p>To specify the bins for the color palette, click <em>Number</em> to select the total number of bins or <em>Cuts</em> to select both the number and the actual cut values for each bin.</p>
-<p>Finally, there is an option to disaggregate the raster layer and create a new one with a higher resolution (smaller cells) while also locally interpolating between the new cell values (smoothed cells). To disaggregate the raster layer, enter the number of cells to disaggregate.</p>
-<p>For this example, use the default values for XMIN, XMAX, YMIN, and YMAX as well as the given projection, but enter 5 as the number of cells to disaggregate:</p>
-<p><img src="https://github.com/paulgovan/QRAGadget/blob/master/inst/images/raster.PNG?raw=true"></p>
-</div>
-<div class="section level2">
-<h2 id="map">Map<a class="anchor" aria-label="anchor" href="#map"></a>
-</h2>
-<p>To view the interactive map, click the <em>Map</em> icon. Click the <em>Reset</em> button at any time in order to reset the extents of the map.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"QRAGadget"</span><span class="op">)</span></span></code></pre></div>
+<p>Or to install the latest development version:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">'paulgovan/QRAGadget'</span><span class="op">)</span></span></code></pre></div>
+<p>After installation, and if using <a href="https://posit.co/products/open-source/rstudio/" class="external-link">RStudio</a> (v0.99.878 or later), the gadget will appear in the Addins dropdown menu. Otherwise, to launch the gadget, simply type:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">QRAGadget</span><span class="fu">::</span><span class="fu"><a href="reference/QRAGadget.html">QRAGadget</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><img src="https://github.com/paulgovan/QRAGadget/blob/master/inst/images/map.PNG?raw=true"></p>
-</div>
 <div class="section level2">
-<h2 id="preferences">Preferences<a class="anchor" aria-label="anchor" href="#preferences"></a>
+<h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
 </h2>
-<p>The <em>Preferences</em> tab has a number of options for customizing the map:</p>
-<ul>
-<li>The title of the map</li>
-<li>The color palette (see <a href="https://colorbrewer2.org" class="external-link">colorbrewer2.org</a>)</li>
-<li>The basemap (see <a href="https://leaflet-extras.github.io/leaflet-providers/preview/index.html" class="external-link">http://leaflet-extras.github.io</a>)</li>
-<li>The control position</li>
-<li>The legend position</li>
-</ul>
-<p>To try out some of these options, select the <em>PuOr</em> <strong>Color Palette</strong>, the <em>Esri.WorldImagery</em> <strong>Map Tile</strong>, and move the <strong>Control Position</strong> over to the <em>bottomleft</em>:</p>
-<p><img src="https://github.com/paulgovan/QRAGadget/blob/master/inst/images/preferences.PNG?raw=true"></p>
-<p>This should result in the following interactive map:</p>
-<p><img src="https://github.com/paulgovan/QRAGadget/blob/master/inst/images/Map2.PNG?raw=true"></p>
+<p>Please note that the QRAGadget project is released with a <a href="http://paulgovan.github.io/QRAGadget/CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
 
@@ -135,6 +108,13 @@
 </ul>
 </div>
 
+<div class="community">
+<h2 data-toc-skip>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CONTRIBUTING.html">Contributing guide</a></li>
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
 
 <div class="citation">
 <h2 data-toc-skip>Citation</h2>
@@ -146,7 +126,7 @@
 <div class="developers">
 <h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li>Paul Govan <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0002-1821-8492" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Paul Govan <br><small class="roles"> Author, maintainer, copyright holder </small> <a href="https://orcid.org/0000-0002-1821-8492" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a>  </li>
 </ul>
 </div>
 
@@ -161,7 +141,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>
