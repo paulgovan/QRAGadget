@@ -1,5 +1,6 @@
 <urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
 <url><loc>http://paulgovan.github.io/QRAGadget/404.html</loc></url>
+<url><loc>http://paulgovan.github.io/QRAGadget/CLAUDE.html</loc></url>
 <url><loc>http://paulgovan.github.io/QRAGadget/CODE_OF_CONDUCT.html</loc></url>
 <url><loc>http://paulgovan.github.io/QRAGadget/CONTRIBUTING.html</loc></url>
 <url><loc>http://paulgovan.github.io/QRAGadget/LICENSE-text.html</loc></url>
@@ -10,6 +11,5 @@
 <url><loc>http://paulgovan.github.io/QRAGadget/news/index.html</loc></url>
 <url><loc>http://paulgovan.github.io/QRAGadget/reference/QRAGadget.html</loc></url>
 <url><loc>http://paulgovan.github.io/QRAGadget/reference/index.html</loc></url>
-<url><loc>http://paulgovan.github.io/QRAGadget/reference/matrixInput.html</loc></url>
 </urlset>
 
