@@ -7,20 +7,22 @@ URL: https://github.com/paulgovan/qragadget, http://paulgovan.github.io/QRAGadge
 BugReports: https://github.com/paulgovan/QRAGadget/issues
 Authors@R: person("Paul", "Govan", email = "paul.govan2@gmail.com", role = c("aut", "cre", "cph"), comment = c(ORCID = "0000-0002-1821-8492"))
 Depends:
-    R (>= 2.10.0)
+    R (>= 4.1.0)
 License: Apache License
+Encoding: UTF-8
 Imports:
     htmlwidgets,
     leaflet,
-    magrittr,
     miniUI,
-    raster,
+    rhandsontable,
     scales,
     shiny,
     shinyWidgets,
-    sp
-RoxygenNote: 6.0.1
+    terra
+RoxygenNote: 7.3.3
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat (>= 3.0.0)
 VignetteBuilder: knitr
+Config/testthat/edition: 3

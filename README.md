@@ -12,7 +12,7 @@ status](https://www.r-pkg.org/badges/version/QRAGadget)](https://CRAN.R-project.
 [![R-CMD-check](https://github.com/paulgovan/QRAGadget/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/paulgovan/QRAGadget/actions/workflows/R-CMD-check.yaml)
 [![](http://cranlogs.r-pkg.org/badges/grand-total/QRAGadget)](https://cran.r-project.org/package=QRAGadget)
 [![](http://cranlogs.r-pkg.org/badges/last-month/QRAGadget)](https://cran.r-project.org/package=QRAGadget)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1145431.svg)](https://doi.org/10.5281/zenodo.1145431)
+[![](https://img.shields.io/badge/doi-10.32614/CRAN.package.QRAGadget-green.svg)](https://doi.org/10.32614/CRAN.package.QRAGadget)
 
 <!-- badges: end -->
 

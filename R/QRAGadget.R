@@ -19,7 +19,7 @@ labelFormat2 <-
         numeric = (function(cuts) {
           paste0(prefix, formatNum(cuts), suffix)
         })(...),
-        bin <- (function(cuts) {
+        bin = (function(cuts) {
           n <- length(cuts)
           paste0(
             prefix,
@@ -29,7 +29,7 @@ labelFormat2 <-
             suffix
           )
         })(...),
-        quantile <- (function(cuts, p) {
+        quantile = (function(cuts, p) {
           n <- length(cuts)
           p <- paste0(round(p * 100), "%")
           cuts <- paste0(formatNum(cuts[-n]), between, formatNum(cuts[-1]))
@@ -45,7 +45,7 @@ labelFormat2 <-
             "</span>"
           )
         })(...),
-        factor <- (function(cuts) {
+        factor = (function(cuts) {
           paste0(prefix, as.character(transform(cuts)), suffix)
         })(...)
       )
@@ -53,7 +53,7 @@ labelFormat2 <-
   }
 
 # Create some sample data
-sample <- matrix(runif(36 * 36), ncol = 36, nrow = 36) %>%
+sample <- matrix(runif(36 * 36), ncol = 36, nrow = 36) |>
   data.frame()
 
 # Set initial bins
@@ -71,8 +71,8 @@ initBins <- c(
   1e-6,
   1e-5,
   0.0001
-) %>%
-  matrix(ncol = 1) %>%
+) |>
+  matrix(ncol = 1) |>
   data.frame()
 
 #' A 'Shiny' Gadget for Interactive QRA Visualizations.
@@ -81,14 +81,13 @@ initBins <- c(
 #' from numerous color palettes, basemaps, and different configurations.
 #'
 #' @importFrom htmlwidgets saveWidget
-#' @importFrom leaflet leaflet leafletOutput renderLeaflet colorBin addLegend addLayersControl addRasterImage addProviderTiles "%>%"
-#' @importFrom magrittr "%>%"
+#' @importFrom leaflet leaflet leafletOutput renderLeaflet colorBin addLegend addLayersControl addRasterImage addProviderTiles
 #' @import miniUI
-#' @importFrom raster raster crs setValues flip disaggregate values
+#' @importFrom rhandsontable rHandsontableOutput renderRHandsontable rhandsontable hot_to_r
+#' @importFrom terra rast crs<- setValues flip disagg values
 #' @importFrom scales brewer_pal
 #' @import shiny
 #' @importFrom shinyWidgets radioGroupButtons
-#' @importFrom sp CRS
 #' @return The function launches a Shiny Gadget.
 #' @export
 #' @examples
@@ -185,7 +184,7 @@ QRAGadget <- function() {
           ),
           conditionalPanel(
             "input.radio == 2",
-            matrixInput("bins", label = NULL, initBins)
+            rhandsontable::rHandsontableOutput("bins")
           ),
           hr(),
           numericInput("dis", "Number of cells to disaggregate (Smooth):",
@@ -287,6 +286,17 @@ QRAGadget <- function() {
       vals <- matrix(data(), ncol = 1, dimnames = NULL)
     })
 
+    # Render the editable bin cuts table
+    output$bins <- rhandsontable::renderRHandsontable({
+      rhandsontable::rhandsontable(initBins, colHeaders = "Cuts", rowHeaders = FALSE)
+    })
+
+    # Read bin cuts from the handsontable widget
+    bins_data <- reactive({
+      req(input$bins)
+      rhandsontable::hot_to_r(input$bins)
+    })
+
     # Create a raster image
     r <- reactive({
       req(
@@ -296,23 +306,23 @@ QRAGadget <- function() {
         input$ymx,
         input$projection
       )
-      r <- raster::raster(
+      r <- terra::rast(
         nrows = nrow(data()),
         ncols = ncol(data()),
-        xmn = input$xmn,
-        xmx = input$xmx,
-        ymn = input$ymn,
-        ymx = input$ymx
+        xmin = input$xmn,
+        xmax = input$xmx,
+        ymin = input$ymn,
+        ymax = input$ymx
       )
-      raster::crs(r) <- sp::CRS(input$projection)
-      r <- raster::setValues(r, vals()) %>%
-        raster::flip(direction = "y") %>%
-        raster::disaggregate(input$dis, "bilinear")
+      terra::crs(r) <- input$projection
+      r <- terra::setValues(r, vals()) |>
+        terra::flip(direction = "vertical") |>
+        terra::disagg(fact = input$dis, method = "bilinear")
     })
 
     # Create a map object
     map <- reactive({
-      req(input$nbins, input$bins, input$pal, input$tile)
+      req(input$nbins, input$pal, input$tile)
       if (is.null(data())) {
         return(NULL)
       }
@@ -322,37 +332,38 @@ QRAGadget <- function() {
         n <- input$nbins - 2
         bins <- n
       } else {
-        n <- nrow(input$bins) - 2
-        bins <- c(input$bins)
+        bd <- bins_data()
+        n <- nrow(bd) - 2
+        bins <- c(bd[[1]])
       }
 
       # Set color palette
       col <- scales::brewer_pal(palette = input$pal, direction = -1)(n)
       pal <- leaflet::colorBin(col,
-        raster::values(r()),
+        terra::values(r()),
         bins = bins,
         na.color = "transparent"
       )
 
       force(input$resetMap)
 
-      leaflet::leaflet() %>%
-        leaflet::addProviderTiles(input$tile, group = input$tile) %>%
+      leaflet::leaflet() |>
+        leaflet::addProviderTiles(input$tile, group = input$tile) |>
         leaflet::addRasterImage(
           r(),
           colors = pal,
           opacity = 0.5,
           group = input$title
-        ) %>%
+        ) |>
         leaflet::addLayersControl(
           baseGroups = c(input$tile),
           overlayGroups = input$title,
           position = input$control
-        ) %>%
+        ) |>
         leaflet::addLegend(
           pal = pal,
           position = input$legend,
-          values = raster::values(r()),
+          values = terra::values(r()),
           labFormat = labelFormat2(digits = 15),
           title = input$title
         )

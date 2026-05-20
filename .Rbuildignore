@@ -12,3 +12,6 @@
 ^README\.Rmd$
 ^CODE_OF_CONDUCT\.md$
 ^codemeta\.json$
+^\.positai$
+^\.claude$
+^CLAUDE\.md$

@@ -7,7 +7,7 @@
 QRAGadget()
 }
 \value{
-A standalone html file
+The function launches a Shiny Gadget.
 }
 \description{
 Upload raster data and easily create interactive QRA visualizations. Select
@@ -15,7 +15,7 @@ from numerous color palettes, basemaps, and different configurations.
 }
 \examples{
 if (interactive()) {
-  QRAGadget()
+  QRAGadget::QRAGadget()
 }
 
 }
