@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/paulgovan/QRAGadget/blob/master/inst/CITATION)
+[`inst/CITATION`](https://github.com/paulgovan/QRAGadget/blob/v0.4/inst/CITATION)
 
 Govan P (2023). *QRAGadget: A Shiny Gadget for Interactive QRA
 Visualizations*.

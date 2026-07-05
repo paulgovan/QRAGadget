@@ -2,6 +2,8 @@
 
 ## QRAGadget 0.4
 
+CRAN release: 2026-07-05
+
 ### Major Changes
 
 - Replace deprecated `raster` and `sp` packages with `terra` for spatial
