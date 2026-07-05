@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">QRAGadget</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Released version">0.4</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,6 +36,26 @@
       <small>Source: <a href="https://github.com/paulgovan/QRAGadget/blob/master/NEWS.md" class="external-link"><code>NEWS.md</code></a></small>
     </div>
 
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="0.4" id="qragadget-04">QRAGadget 0.4<a class="anchor" aria-label="anchor" href="#qragadget-04"></a></h2>
+<div class="section level3">
+<h3 id="major-changes-0-4">Major Changes<a class="anchor" aria-label="anchor" href="#major-changes-0-4"></a></h3>
+<ul><li>Replace deprecated <code>raster</code> and <code>sp</code> packages with <code>terra</code> for spatial operations.</li>
+<li>Replace <code>matrixInput()</code> / tableinput widget with <code>rhandsontable</code> for interactive matrix editing.</li>
+<li>Drop <code>magrittr</code> dependency; use the native R pipe (<code>|&gt;</code>). Minimum R version is now 4.1.0.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="new-features-0-4">New Features<a class="anchor" aria-label="anchor" href="#new-features-0-4"></a></h3>
+<ul><li>Added a vignette demonstrating package usage.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="minor-improvements-and-bug-fixes-0-4">Minor Improvements and Bug Fixes<a class="anchor" aria-label="anchor" href="#minor-improvements-and-bug-fixes-0-4"></a></h3>
+<ul><li>Added a <code>testthat</code> test suite covering <code>labelFormat2()</code> and utility functions.</li>
+<li>Added <code>CODE_OF_CONDUCT.md</code> and <code>CONTRIBUTING.md</code> for ropensci compliance.</li>
+<li>Updated CI workflows: R-CMD-check (multi-platform), pkgcheck, and pkgdown.</li>
+<li>Updated CITATION and package documentation.</li>
+</ul></div>
+</div>
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.3.2" id="qragadget-032">QRAGadget 0.3.2<a class="anchor" aria-label="anchor" href="#qragadget-032"></a></h2>
 <div class="section level3">

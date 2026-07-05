@@ -34,7 +34,7 @@ devtools::install_github("paulgovan/QRAGadget")
 ```
 
 After installation, and if using
-[RStudio](https://posit.co/products/open-source/rstudio/) (v0.99.878 or
+[RStudio](https://posit.co/products/open-source/rstudio) (v0.99.878 or
 later), the gadget will appear in the Addins dropdown menu. Otherwise,
 to launch the gadget, simply type:
 
